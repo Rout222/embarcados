@@ -1,0 +1,14 @@
+            XX YY ZZ MM NN LL KK
+
+    XX  -> 01 = Leitura
+        -> 02 = Alteração
+
+    YY  -> 00 = Versão
+        -> 01 = Hora
+        -> 02 = Data
+        -> 03 = Alarme
+
+    ZZ, MM NN -> Dados
+
+    LL -> CRC
+    KK -> CRC

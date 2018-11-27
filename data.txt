@@ -1,0 +1,13 @@
+Atores:                         Caso de uso:
+    PIC18F4550                      Processa os dados
+    DISPLAY 7SEG                    Interface de visualização dos dados
+    MAX232                          Conversão de sinal para leitura de porta serial
+    PORTA SERIAL                    Interface de comunicação externa
+    BOTÕES                          Interface de manipulação dos dados
+    SENSOR DE TEMP.                 Leitura de temperatura.
+    BUZZER                          Disparar sinal do despertador
+    LED                             Disparar sinal do despertador
+    LED.2                           Indicar se o aparelho está ligado/desligado
+    Chave H-H                       Ligar/Desligar o aparelho
+                            
+    
