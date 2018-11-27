@@ -7,17 +7,42 @@
 #include <delays.h>
 #include <plib/usart.h>
 
+
+typedef struct {
+    char h;
+    char m;
+    char s;
+} tempo;
+
+typedef struct {
+    tempo inicio;
+    tempo fim;
+} alarme;
+
+typedef struct{
+    double potencia;
+    int dia;
+} consumoDia;
+
+typedef struct{
+    consumoDia potencia[30];
+} consumoMes;
+
+char semanaPrint[7]           = {'d', 's', 't', 'q', 'q', 's', 's'};
+int  semanaAlarme[7]          = {  0,  0,   0,    0,   0,   0,   0};
+
+tempo horaAtual;
 //#pragma WDT CONFIG = OFF
 #pragma config PBADEN = OFF
 #define _XTAL_FREQ 48000000
 #define COMANDO_RECEBIDO 1
 
-#define IDLE 0			//estado da máquina
+#define IDLE 0			//estado da mï¿½quina
 #define VERIFICACRC 1	//estado da maquina
-#define COMRECEBIDO 2	//estado da máquina
-#define ENVIARESPOSTA 3	//estado da máquina
-#define ENVIAACK 4		//estado da máquina
-#define ENVIANACK 5		//estado da máquina
+#define COMRECEBIDO 2	//estado da mï¿½quina
+#define ENVIARESPOSTA 3	//estado da mï¿½quina
+#define ENVIAACK 4		//estado da mï¿½quina
+#define ENVIANACK 5		//estado da mï¿½quina
 
 #define ALTERACAO '2' //0x32 	//estado de comando
 #define LEITURA '1' //0x31 //estado de comando
@@ -35,25 +60,30 @@
 #define comando_data	'2'//0x32
 #define comando_alarme	'3'//0x33
 
+#define CONST_CONFIGURACAO 1
+#define CONST_TELAINICIAL  2
+
+
 unsigned char serial_data;
 unsigned char BUFFCOM[7], BUFFRESP[7];
 char estado = IDLE; // estado idle
 char versao = 1;//0x31;
 char revisao = 2;//0x32;
-char tela_atual = 1;
+char tela_atual = CONST_TELAINICIAL;
 char contador_interrupcao;
 char contador_um_segundo;
 char buffer[16];
-char hora = 0, minuto = 0, segundo = 0;
 char dia = 04, mes = 06;
 int ano = 2018;
 char desp_hora = 5, desp_min = 10;
 char contador_alarme = 0;
 char despertou = 0;
 int i;
+int funcao = 0;
 
 
-//Variáveis para utilizar o AD
+
+//Variï¿½veis para utilizar o AD
 unsigned int ADResult;
 float temperatura = 0;
 char calcula_temp = 0;
@@ -62,23 +92,23 @@ float constante_ad = 5.0/1023;
 
 /*
 void init_ADC(void){        //Configure ADC with 3 analog channels
-OpenADC(ADC_FOSC_64 &              // ADC_FOSC_64:      Clock de conversão do A/D igual a
+OpenADC(ADC_FOSC_64 &              // ADC_FOSC_64:      Clock de conversï¿½o do A/D igual a
                         //               FAD = FOSC/64 = 48MHz/64 = 750kHz
                         //               Desta Forma, TAD=1/FAD = 1,33us.
-         ADC_RIGHT_JUST &            // ADC_RIGHT_JUST:    Resultado da conversão ocupará os
+         ADC_RIGHT_JUST &            // ADC_RIGHT_JUST:    Resultado da conversï¿½o ocuparï¿½ os
                         //               bits menos significativos dos regis-
                         //               tradores ADRESH e ADRESL.
-         ADC_12_TAD,               // ADC_12_TAD:              Determina o tempo de conversão de uma
-                        //               palavra de 10-bits. Neste caso será
+         ADC_12_TAD,               // ADC_12_TAD:              Determina o tempo de conversï¿½o de uma
+                        //               palavra de 10-bits. Neste caso serï¿½
                         //               igual a 12*TAD = 12*1,33us = 16us.
          
          ADC_CH1 &          // ADC_CH0:         Atua sobre os bits CHS3:CHS0 do ADCON0
-                        //               para selecionar o canal no qual será
-                        //               realizada a conversão. Neste caso o AN0.
-         ADC_INT_OFF &       // ADC_INT_OFF:      Habilita ou Desabilita a interrupção de términio de
-                        //               conversão.
+                        //               para selecionar o canal no qual serï¿½
+                        //               realizada a conversï¿½o. Neste caso o AN0.
+         ADC_INT_OFF &       // ADC_INT_OFF:      Habilita ou Desabilita a interrupï¿½ï¿½o de tï¿½rminio de
+                        //               conversï¿½o.
          ADC_REF_VDD_VSS,    //ADC reference voltage from VDD & VSS
-         ADC_1ANA);         // BITs PCFG3:PCFG0:        Configura os pinos  AN1(RA1) e AN0(RA0) como Entradas Analógicas
+         ADC_1ANA);         // BITs PCFG3:PCFG0:        Configura os pinos  AN1(RA1) e AN0(RA0) como Entradas Analï¿½gicas
 }
 */
 
@@ -89,7 +119,7 @@ void calcula_temperatura(){
 void tela_1(){
     SetDDRamAddr(0x00);
     putrsXLCD("Hora: ");
-    sprintf(buffer, "%d:%d:%d", hora, minuto, segundo);
+    sprintf(buffer, "%d:%d:%d", horaAtual.h, horaAtual.m, horaAtual.s);
     putrsXLCD(buffer);
     SetDDRamAddr(0x40);
     putrsXLCD("Data: ");
@@ -105,20 +135,28 @@ void tela_1(){
 //    
 }
 
-void tela_2(){
-    SetDDRamAddr(0x05);
-    putrsXLCD("Alarme");
-    SetDDRamAddr(0x46);
-    sprintf(buffer, "%d:%d", desp_hora, desp_min);
+void telaConfiguracaoDia(){
+    SetDDRamAddr(0x00);
+    putrsXLCD("Configuracao");
+    SetDDRamAddr(0x40);
+    putrsXLCD("Dia da semana");
     putrsXLCD(buffer);
     return;
 }
 
-void tela_3(){
-    SetDDRamAddr(0x03);
-    putrsXLCD("HELLOWORLD");
-    SetDDRamAddr(0x45);
-    sprintf(buffer, "%d.%d", versao, revisao);
+void telaConfiguracaoHora(){
+    SetDDRamAddr(0x00);
+    putrsXLCD("Configuracao");
+    SetDDRamAddr(0x40);
+    putrsXLCD("Hora");
+    putrsXLCD(buffer);
+    return;
+}
+void telaInicial(){
+    SetDDRamAddr(0x00);
+    sprintf(buffer, "%d %d %d %d %d %d %d", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
+    SetDDRamAddr(0x40);
+    sprintf(buffer, "%d:%d", versao, revisao);
     putrsXLCD(buffer);
     return;
 }
@@ -126,44 +164,26 @@ void tela_4(){
     SetDDRamAddr(0x03);
     putrsXLCD("TESTEer");
     SetDDRamAddr(0x46);
-    sprintf(buffer, "%d C", temperatura);
+    sprintf(buffer,"%d C", temperatura);
     putrsXLCD(buffer);
     return;
 }
-
+//flag 
 void limpa_tela(){
-    SetDDRamAddr(0x00);
-    putrsXLCD("                ");
-    SetDDRamAddr(0x40);
-    putrsXLCD("                ");
-    return;
+    WriteCmdXLCD(0x01);
 }
 
 void telas(char troca_tela){
-    if(troca_tela == 1){
-        if(tela_atual == 4){
-            limpa_tela();
-            tela_atual = 1;
-            tela_1();
-        }else if(tela_atual == 1){
-            limpa_tela();
-            tela_atual = 2;
-            tela_2();
-        }else if(tela_atual == 2){
-            limpa_tela();
-            tela_atual = 3;
-            tela_3();
-        }else{
-            limpa_tela();
-            tela_atual = 4;
-            tela_4();
+    if(tela_atual == CONST_CONFIGURACAO){
+        if (funcao == 0){
+            telaConfiguracaoDia();
+        } else {
+            telaConfiguracaoHora();
         }
-    }else{
-        if(tela_atual == 1) tela_1();
-        if(tela_atual == 2) tela_2();
-        if(tela_atual == 3) tela_3();
-        if(tela_atual == 4) tela_4();
     }
+    if(tela_atual == CONST_TELAINICIAL) telaInicial();
+    if(tela_atual == 3) telaConfiguracaoHora();
+    if(tela_atual == 4) telaConfiguracaoHora();
 }
 
 void troca_telas(){
@@ -201,9 +221,9 @@ void trata_despertador(){
 }
 
 void trata_data(){
-    if(hora == 24){
+    if(horaAtual.h == 24){
         dia+=1;
-        hora = 0;
+        horaAtual.h = 0;
         return;
     }
     if(mes == 2 && dia == 28){
@@ -225,20 +245,20 @@ void trata_data(){
 }
 
 void trata_hora(){
-    if((segundo) == 60){
-        minuto += 1;
-        segundo = 0;
+    if((horaAtual.s) == 60){
+        horaAtual.m += 1;
+        horaAtual.s = 0;
         return;
     }
-    if((minuto) == 60){
-        hora+=1;
-        minuto = 0;
+    if((horaAtual.m) == 60){
+        horaAtual.h+=1;
+        horaAtual.m = 0;
         return;
     }
 }
 
 void despertar(){
-    if((hora) == desp_hora && (minuto) == desp_min && despertou == 0){
+    if((horaAtual.h) == desp_hora && (horaAtual.m) == desp_min && despertou == 0){
         PORTAbits.RA0 = 1;
         contador_alarme += 1;
     }
@@ -264,7 +284,7 @@ void interrupt low_priority pic_isr(void){
         if(contador_interrupcao == 20){
             contador_um_segundo += 1;
             contador_interrupcao = 0;
-            segundo+=1;
+            horaAtual.s+=1;
         }
     }
     
@@ -283,8 +303,8 @@ void interrupt low_priority pic_isr(void){
 
 
 /*
- * Definições das funções de comunicação serial do programa
- * Todas as implementações estão abaixo da main.
+ * Definiï¿½ï¿½es das funï¿½ï¿½es de comunicaï¿½ï¿½o serial do programa
+ * Todas as implementaï¿½ï¿½es estï¿½o abaixo da main.
  */
 
 unsigned short crc16(char *data_p, unsigned short length);
@@ -303,7 +323,7 @@ void main(void) {
     T0CONbits.T08BIT = 0; //Temporizador/contador de 16Bits
     T0CONbits.PSA = 0;
     
-    T0CONbits.T0PS0 = 1;    //Configuração do pre-scaler
+    T0CONbits.T0PS0 = 1;    //Configuraï¿½ï¿½o do pre-scaler
     T0CONbits.T0PS1 = 1;
     T0CONbits.T0PS2 = 0;
     
@@ -334,6 +354,9 @@ void main(void) {
     //putrsXLCD("Despertador");
     //SetDDRamAddr(0x40);
     //putrsXLCD("v01.00");
+    horaAtual.h = 0x0;
+    horaAtual.m = 0x0;
+    horaAtual.s = 0x0;
     while(1){
         if(contador_um_segundo == 1){
             contador_um_segundo = 0;
@@ -410,14 +433,14 @@ void trataComando(){
                     memcpy(&BUFFRESP[4], 0x0, sizeof(char));
 					//BUFFRESP[2] = versao;
 					//BUFFRESP[3] = revisao;
-					//BUFFRESP[4] = 0xFF; //posição vazia
+					//BUFFRESP[4] = 0xFF; //posiï¿½ï¿½o vazia
 					break;			
 				
 				//consulta a hora atual do sistema
 				case comando_hora:
-					BUFFRESP[2] = hora;
-					BUFFRESP[3] = minuto;
-					BUFFRESP[4] = segundo;
+					BUFFRESP[2] = horaAtual.h;
+					BUFFRESP[3] = horaAtual.m;
+					BUFFRESP[4] = horaAtual.s;
 					break;
 
 				//consulta a data atual do sistema
@@ -453,9 +476,9 @@ void trataComando(){
 				
 				//altera hora
 				case comando_hora:
-					hora = (BUFFCOM[2]-48);
-					minuto = (BUFFCOM[3]-48);
-					segundo = (BUFFCOM[4]-48);
+					horaAtual.h = (BUFFCOM[2]-48);
+					horaAtual.m = (BUFFCOM[3]-48);
+					horaAtual.s = (BUFFCOM[4]-48);
 					break;
 				
 				//altera data
@@ -532,7 +555,7 @@ void enviaByte(char BYTE){
 		estado = IDLE;
 }
 
-//criar uma função para enviar para o Tx todo o byte que eu recebo no RX
+//criar uma funï¿½ï¿½o para enviar para o Tx todo o byte que eu recebo no RX
 //envia buffer de resposta pela serial
 void tx_data(){
 	int cont;

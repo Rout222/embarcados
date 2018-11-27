@@ -1,0 +1,21 @@
+telas
+	consumo
+		mensal
+		anual
+	configuração
+		dias da semana
+			maiusculo e minusculo
+		hora
+			hora e minuto
+	alarmes
+		hora de inicio 10:00
+		hora de término 9:50
+
+
+botoes
+	trocar de tela
+	trocar de funçao
+	incrementar
+
+	
+		

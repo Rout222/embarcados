@@ -5755,27 +5755,52 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-
 # 11 "main.c"
+typedef struct {
+char h;
+char m;
+char s;
+} tempo;
+
+typedef struct {
+tempo inicio;
+tempo fim;
+} alarme;
+
+typedef struct{
+double potencia;
+int dia;
+} consumoDia;
+
+typedef struct{
+consumoDia potencia[30];
+} consumoMes;
+
+char semanaPrint[7] = {'d', 's', 't', 'q', 'q', 's', 's'};
+int semanaAlarme[7] = { 0, 0, 0, 0, 0, 0, 0};
+
+tempo horaAtual;
+
 #pragma config PBADEN = OFF
 
-# 38
+# 67
 unsigned char serial_data;
 unsigned char BUFFCOM[7], BUFFRESP[7];
 char estado = 0;
 char versao = 1;
 char revisao = 2;
-char tela_atual = 1;
+char tela_atual = 2;
 char contador_interrupcao;
 char contador_um_segundo;
 char buffer[16];
-char hora = 0, minuto = 0, segundo = 0;
 char dia = 04, mes = 06;
 int ano = 2018;
 char desp_hora = 5, desp_min = 10;
 char contador_alarme = 0;
 char despertou = 0;
 int i;
+int funcao = 0;
+
 
 
 
@@ -5785,7 +5810,7 @@ char calcula_temp = 0;
 
 float constante_ad = 5.0/1023;
 
-# 85
+# 115
 void calcula_temperatura(){
 temperatura = (ADResult/15)*constante_ad;
 }
@@ -5793,7 +5818,7 @@ temperatura = (ADResult/15)*constante_ad;
 void tela_1(){
 SetDDRamAddr(0x00);
 putrsXLCD("Hora: ");
-sprintf(buffer, "%d:%d:%d", hora, minuto, segundo);
+sprintf(buffer, "%d:%d:%d", horaAtual.h, horaAtual.m, horaAtual.s);
 putrsXLCD(buffer);
 SetDDRamAddr(0x40);
 putrsXLCD("Data: ");
@@ -5801,23 +5826,31 @@ sprintf(buffer, "%d/%d/%d", dia, mes, ano);
 putrsXLCD(buffer);
 return;
 
-# 106
+# 136
 }
 
-void tela_2(){
-SetDDRamAddr(0x05);
-putrsXLCD("Alarme");
-SetDDRamAddr(0x46);
-sprintf(buffer, "%d:%d", desp_hora, desp_min);
+void telaConfiguracaoDia(){
+SetDDRamAddr(0x00);
+putrsXLCD("Configuracao");
+SetDDRamAddr(0x40);
+putrsXLCD("Dia da semana");
 putrsXLCD(buffer);
 return;
 }
 
-void tela_3(){
-SetDDRamAddr(0x03);
-putrsXLCD("HELLOWORLD");
-SetDDRamAddr(0x45);
-sprintf(buffer, "%d.%d", versao, revisao);
+void telaConfiguracaoHora(){
+SetDDRamAddr(0x00);
+putrsXLCD("Configuracao");
+SetDDRamAddr(0x40);
+putrsXLCD("Hora");
+putrsXLCD(buffer);
+return;
+}
+void telaInicial(){
+SetDDRamAddr(0x00);
+sprintf(buffer, "%d %d %d %d %d %d %d", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
+SetDDRamAddr(0x40);
+sprintf(buffer, "%d:%d", versao, revisao);
 putrsXLCD(buffer);
 return;
 }
@@ -5825,44 +5858,26 @@ void tela_4(){
 SetDDRamAddr(0x03);
 putrsXLCD("TESTEer");
 SetDDRamAddr(0x46);
-sprintf(buffer, "%d C", temperatura);
+sprintf(buffer,"%d C", temperatura);
 putrsXLCD(buffer);
 return;
 }
 
 void limpa_tela(){
-SetDDRamAddr(0x00);
-putrsXLCD("                ");
-SetDDRamAddr(0x40);
-putrsXLCD("                ");
-return;
+WriteCmdXLCD(0x01);
 }
 
 void telas(char troca_tela){
-if(troca_tela == 1){
-if(tela_atual == 4){
-limpa_tela();
-tela_atual = 1;
-tela_1();
-}else if(tela_atual == 1){
-limpa_tela();
-tela_atual = 2;
-tela_2();
-}else if(tela_atual == 2){
-limpa_tela();
-tela_atual = 3;
-tela_3();
-}else{
-limpa_tela();
-tela_atual = 4;
-tela_4();
+if(tela_atual == 1){
+if (funcao == 0){
+telaConfiguracaoDia();
+} else {
+telaConfiguracaoHora();
 }
-}else{
-if(tela_atual == 1) tela_1();
-if(tela_atual == 2) tela_2();
-if(tela_atual == 3) tela_3();
-if(tela_atual == 4) tela_4();
 }
+if(tela_atual == 2) telaInicial();
+if(tela_atual == 3) telaConfiguracaoHora();
+if(tela_atual == 4) telaConfiguracaoHora();
 }
 
 void troca_telas(){
@@ -5900,9 +5915,9 @@ while(PORTDbits.RD2);
 }
 
 void trata_data(){
-if(hora == 24){
+if(horaAtual.h == 24){
 dia+=1;
-hora = 0;
+horaAtual.h = 0;
 return;
 }
 if(mes == 2 && dia == 28){
@@ -5924,20 +5939,20 @@ return;
 }
 
 void trata_hora(){
-if((segundo) == 60){
-minuto += 1;
-segundo = 0;
+if((horaAtual.s) == 60){
+horaAtual.m += 1;
+horaAtual.s = 0;
 return;
 }
-if((minuto) == 60){
-hora+=1;
-minuto = 0;
+if((horaAtual.m) == 60){
+horaAtual.h+=1;
+horaAtual.m = 0;
 return;
 }
 }
 
 void despertar(){
-if((hora) == desp_hora && (minuto) == desp_min && despertou == 0){
+if((horaAtual.h) == desp_hora && (horaAtual.m) == desp_min && despertou == 0){
 PORTAbits.RA0 = 1;
 contador_alarme += 1;
 }
@@ -5963,7 +5978,7 @@ contador_interrupcao++;
 if(contador_interrupcao == 20){
 contador_um_segundo += 1;
 contador_interrupcao = 0;
-segundo+=1;
+horaAtual.s+=1;
 }
 }
 
@@ -5980,7 +5995,7 @@ estado = 1;
 }
 }
 
-# 290
+# 310
 unsigned short crc16(char *data_p, unsigned short length);
 void calculaCRCBUFFRESP();
 void trataComando();
@@ -6028,6 +6043,9 @@ PEIE = 1;
 
 
 
+horaAtual.h = 0x0;
+horaAtual.m = 0x0;
+horaAtual.s = 0x0;
 while(1){
 if(contador_um_segundo == 1){
 contador_um_segundo = 0;
@@ -6109,9 +6127,9 @@ break;
 
 
 case '1':
-BUFFRESP[2] = hora;
-BUFFRESP[3] = minuto;
-BUFFRESP[4] = segundo;
+BUFFRESP[2] = horaAtual.h;
+BUFFRESP[3] = horaAtual.m;
+BUFFRESP[4] = horaAtual.s;
 break;
 
 
@@ -6147,9 +6165,9 @@ break;
 
 
 case '1':
-hora = (BUFFCOM[2]-48);
-minuto = (BUFFCOM[3]-48);
-segundo = (BUFFCOM[4]-48);
+horaAtual.h = (BUFFCOM[2]-48);
+horaAtual.m = (BUFFCOM[3]-48);
+horaAtual.s = (BUFFCOM[4]-48);
 break;
 
 

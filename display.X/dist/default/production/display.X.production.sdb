@@ -1,4 +1,4 @@
-[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[p LITE_MODE AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F4550 ]
@@ -6,33 +6,33 @@
 "492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\float.c
-[v ___ftpack __ftpack `(f  1 e 3 0 ]
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftdiv.c
-[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftmul.c
-[v ___ftmul __ftmul `(f  1 e 3 0 ]
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
 "20 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\ftsub.c
-[v ___ftsub __ftsub `(f  1 e 3 0 ]
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"28 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwtoft.c
-[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcadd.c
-[v ___fladd __fladd `(d  1 e 3 0 ]
+[v ___fladd __fladd `(d  1 e 4 0 ]
 "245
-[v ___flsub __flsub `(d  1 e 3 0 ]
+[v ___flsub __flsub `(d  1 e 4 0 ]
 "11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 3 0 ]
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 3 0 ]
+[v ___flmul __flmul `(d  1 e 4 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d10ktcyx.c
 [v _Delay10KTCYx Delay10KTCYx `(v  1 e 1 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d10tcyx.c
@@ -51,53 +51,49 @@
 [v _WriteCmdXLCD WriteCmdXLCD `(v  1 e 1 0 ]
 "16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\writdata.c
 [v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
-"89 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
-[v _tela_1 tela_1 `(v  1 e 1 0 ]
-"108
-[v _tela_2 tela_2 `(v  1 e 1 0 ]
-"117
-[v _tela_3 tela_3 `(v  1 e 1 0 ]
-"125
-[v _tela_4 tela_4 `(v  1 e 1 0 ]
-"134
-[v _limpa_tela limpa_tela `(v  1 e 1 0 ]
-"142
+"138 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+[v _telaConfiguracaoDia telaConfiguracaoDia `(v  1 e 1 0 ]
+"147
+[v _telaConfiguracaoHora telaConfiguracaoHora `(v  1 e 1 0 ]
+"155
+[v _telaInicial telaInicial `(v  1 e 1 0 ]
+"176
 [v _telas telas `(v  1 e 1 0 ]
-"169
+"189
 [v _troca_telas troca_telas `(v  1 e 1 0 ]
-"177
+"197
 [v _trata_despertador trata_despertador `(v  1 e 1 0 ]
-"203
+"223
 [v _trata_data trata_data `(v  1 e 1 0 ]
-"227
+"247
 [v _trata_hora trata_hora `(v  1 e 1 0 ]
-"240
+"260
 [v _despertar despertar `(v  1 e 1 0 ]
-"251
+"271
 [v _init_XLCD init_XLCD `(v  1 e 1 0 ]
-"258
+"278
 [v _pic_isr pic_isr `IIL(v  1 e 1 0 ]
-"299
+"319
 [v _main main `(v  1 e 1 0 ]
-"353
+"376
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
-"357
+"380
 [v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
-"368
+"391
 [v _crc16 crc16 `(us  1 e 2 0 ]
-"389
+"412
 [v _calculaCRCBUFFRESP calculaCRCBUFFRESP `(v  1 e 1 0 ]
-"398
+"421
 [v _trataComando trataComando `(v  1 e 1 0 ]
-"483
+"506
 [v _verificaCRCBUFFCOM verificaCRCBUFFCOM `(v  1 e 1 0 ]
-"496
+"519
 [v _maquinaEstado maquinaEstado `(v  1 e 1 0 ]
-"525
+"548
 [v _enviaByte enviaByte `(v  1 e 1 0 ]
-"537
+"560
 [v _tx_data tx_data `(v  1 e 1 0 ]
-[s S90 . 1 `uc 1 RA0 1 0 :1:0 
+[s S99 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -106,7 +102,7 @@
 `uc 1 RA6 1 0 :1:6 
 ]
 "2319 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
-[s S98 . 1 `uc 1 AN0 1 0 :1:0 
+[s S107 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
@@ -114,20 +110,20 @@
 `uc 1 AN4 1 0 :1:5 
 `uc 1 OSC2 1 0 :1:6 
 ]
-[s S106 . 1 `uc 1 . 1 0 :2:0 
+[s S115 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S112 . 1 `uc 1 . 1 0 :5:0 
+[s S121 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S115 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S124 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S117 . 1 `S90 1 . 1 0 `S98 1 . 1 0 `S106 1 . 1 0 `S112 1 . 1 0 `S115 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES117  1 e 1 @3968 ]
-[s S37 . 1 `uc 1 RD0 1 0 :1:0 
+[u S126 . 1 `S99 1 . 1 0 `S107 1 . 1 0 `S115 1 . 1 0 `S121 1 . 1 0 `S124 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES126  1 e 1 @3968 ]
+[s S46 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -137,7 +133,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2699
-[s S46 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S55 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -146,16 +142,16 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S55 . 1 `uc 1 . 1 0 :7:0 
+[s S64 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S58 . 1 `S37 1 . 1 0 `S46 1 . 1 0 `S55 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES58  1 e 1 @3971 ]
+[u S67 . 1 `S46 1 . 1 0 `S55 1 . 1 0 `S64 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES67  1 e 1 @3971 ]
 "2727
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 "3383
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S520 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S527 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -165,32 +161,32 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "3543
-[s S529 . 1 `uc 1 LB0 1 0 :1:0 
+[s S536 . 1 `uc 1 LB0 1 0 :1:0 
 ]
-[s S531 . 1 `uc 1 . 1 0 :1:0 
+[s S538 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 ]
-[s S534 . 1 `uc 1 . 1 0 :2:0 
+[s S541 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LB2 1 0 :1:2 
 ]
-[s S537 . 1 `uc 1 . 1 0 :3:0 
+[s S544 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LB3 1 0 :1:3 
 ]
-[s S540 . 1 `uc 1 . 1 0 :4:0 
+[s S547 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LB4 1 0 :1:4 
 ]
-[s S543 . 1 `uc 1 . 1 0 :5:0 
+[s S550 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LB5 1 0 :1:5 
 ]
-[s S546 . 1 `uc 1 . 1 0 :6:0 
+[s S553 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LB6 1 0 :1:6 
 ]
-[s S549 . 1 `uc 1 . 1 0 :7:0 
+[s S556 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S552 . 1 `S520 1 . 1 0 `S529 1 . 1 0 `S531 1 . 1 0 `S534 1 . 1 0 `S537 1 . 1 0 `S540 1 . 1 0 `S543 1 . 1 0 `S546 1 . 1 0 `S549 1 . 1 0 ]
-[v _LATBbits LATBbits `VES552  1 e 1 @3978 ]
-[s S282 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S559 . 1 `S527 1 . 1 0 `S536 1 . 1 0 `S538 1 . 1 0 `S541 1 . 1 0 `S544 1 . 1 0 `S547 1 . 1 0 `S550 1 . 1 0 `S553 1 . 1 0 `S556 1 . 1 0 ]
+[v _LATBbits LATBbits `VES559  1 e 1 @3978 ]
+[s S286 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -198,18 +194,18 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "3829
-[s S289 . 1 `uc 1 RC0 1 0 :1:0 
+[s S293 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S296 . 1 `S282 1 . 1 0 `S289 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES296  1 e 1 @3988 ]
+[u S300 . 1 `S286 1 . 1 0 `S293 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES300  1 e 1 @3988 ]
 "4173
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S609 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S616 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -219,7 +215,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "4205
-[s S618 . 1 `uc 1 RB0 1 0 :1:0 
+[s S625 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -228,9 +224,9 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S627 . 1 `S609 1 . 1 0 `S618 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES627  1 e 1 @3987 ]
-[s S216 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S634 . 1 `S616 1 . 1 0 `S625 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES634  1 e 1 @3987 ]
+[s S220 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -240,14 +236,14 @@
 `uc 1 SPPIF 1 0 :1:7 
 ]
 "4441
-[s S225 . 1 `uc 1 . 1 0 :4:0 
+[s S229 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[u S231 . 1 `S216 1 . 1 0 `S225 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES231  1 e 1 @3998 ]
+[u S235 . 1 `S220 1 . 1 0 `S229 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES235  1 e 1 @3998 ]
 "4876
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "5085
@@ -258,7 +254,7 @@
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "5362
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
-[s S252 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S256 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -266,15 +262,15 @@
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "7984
-[s S259 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S263 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S263 . 1 `S252 1 . 1 0 `S259 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES263  1 e 1 @4053 ]
+[u S267 . 1 `S256 1 . 1 0 `S263 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES267  1 e 1 @4053 ]
 "8033
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
-[s S167 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S171 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -284,7 +280,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8476
-[s S176 . 1 `uc 1 . 1 0 :1:0 
+[s S180 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -293,12 +289,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S185 . 1 `uc 1 . 1 0 :6:0 
+[s S189 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S189 . 1 `S167 1 . 1 0 `S176 1 . 1 0 `S185 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES189  1 e 1 @4082 ]
+[u S193 . 1 `S171 1 . 1 0 `S180 1 . 1 0 `S189 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES193  1 e 1 @4082 ]
 "9658
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
 "9772
@@ -313,108 +309,93 @@
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _dpowers dpowers `C[5]ui  1 s 10 dpowers ]
-"39 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"31 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+[v _semanaPrint semanaPrint `[7]uc  1 e 7 0 ]
+[s S21 . 3 `uc 1 h 1 0 `uc 1 m 1 1 `uc 1 s 1 2 ]
+"34
+[v _horaAtual horaAtual `S21  1 e 3 0 ]
+"68
 [v _BUFFCOM BUFFCOM `[7]uc  1 e 7 0 ]
 [v _BUFFRESP BUFFRESP `[7]uc  1 e 7 0 ]
-"40
+"69
 [v _estado estado `uc  1 e 1 0 ]
-"41
+"70
 [v _versao versao `uc  1 e 1 0 ]
-"42
+"71
 [v _revisao revisao `uc  1 e 1 0 ]
-"43
+"72
 [v _tela_atual tela_atual `uc  1 e 1 0 ]
-"44
+"73
 [v _contador_interrupcao contador_interrupcao `uc  1 e 1 0 ]
-"45
+"74
 [v _contador_um_segundo contador_um_segundo `uc  1 e 1 0 ]
-"46
+"75
 [v _buffer buffer `[16]uc  1 e 16 0 ]
-"47
-[v _hora hora `uc  1 e 1 0 ]
-[v _minuto minuto `uc  1 e 1 0 ]
-[v _segundo segundo `uc  1 e 1 0 ]
-"48
+"76
 [v _dia dia `uc  1 e 1 0 ]
 [v _mes mes `uc  1 e 1 0 ]
-"49
+"77
 [v _ano ano `i  1 e 2 0 ]
-"50
+"78
 [v _desp_hora desp_hora `uc  1 e 1 0 ]
 [v _desp_min desp_min `uc  1 e 1 0 ]
-"51
+"79
 [v _contador_alarme contador_alarme `uc  1 e 1 0 ]
-"52
+"80
 [v _despertou despertou `uc  1 e 1 0 ]
-"53
+"81
 [v _i i `i  1 e 2 0 ]
-"57
+"82
+[v _funcao funcao `i  1 e 2 0 ]
+"87
 [v _ADResult ADResult `ui  1 e 2 0 ]
-"58
-[v _temperatura temperatura `f  1 e 3 0 ]
-"61
-[v _constante_ad constante_ad `f  1 e 3 0 ]
-"299
+"88
+[v _temperatura temperatura `f  1 e 4 0 ]
+"91
+[v _constante_ad constante_ad `f  1 e 4 0 ]
+"319
 [v _main main `(v  1 e 1 0 ]
 {
-"351
+"374
 } 0
-"169
+"189
 [v _troca_telas troca_telas `(v  1 e 1 0 ]
 {
-"175
+"195
 } 0
-"227
+"247
 [v _trata_hora trata_hora `(v  1 e 1 0 ]
 {
-"238
+"258
 } 0
-"177
+"197
 [v _trata_despertador trata_despertador `(v  1 e 1 0 ]
 {
-"201
+"221
 } 0
-"142
+"176
 [v _telas telas `(v  1 e 1 0 ]
 {
-[v telas@troca_tela troca_tela `uc  1 a 1 wreg ]
-[v telas@troca_tela troca_tela `uc  1 a 1 wreg ]
-[v telas@troca_tela troca_tela `uc  1 a 1 30 ]
-"167
+"187
 } 0
-"125
-[v _tela_4 tela_4 `(v  1 e 1 0 ]
+"155
+[v _telaInicial telaInicial `(v  1 e 1 0 ]
 {
-"132
-} 0
-"117
-[v _tela_3 tela_3 `(v  1 e 1 0 ]
-{
-"124
-} 0
-"108
-[v _tela_2 tela_2 `(v  1 e 1 0 ]
-{
-"115
-} 0
-"89
-[v _tela_1 tela_1 `(v  1 e 1 0 ]
-{
-"106
+"162
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 "528
-[v sprintf@val val `ui  1 a 2 14 ]
+[v sprintf@val val `ui  1 a 2 34 ]
 "494
-[v sprintf@ap ap `[1]*.39v  1 a 2 10 ]
+[v sprintf@ap ap `[1]*.39v  1 a 2 30 ]
 "499
-[v sprintf@c c `c  1 a 1 16 ]
+[v sprintf@c c `c  1 a 1 36 ]
 "506
-[v sprintf@prec prec `c  1 a 1 13 ]
+[v sprintf@prec prec `c  1 a 1 33 ]
 "508
-[v sprintf@flag flag `uc  1 a 1 12 ]
+[v sprintf@flag flag `uc  1 a 1 32 ]
 "492
 [v sprintf@sp sp `*.39uc  1 p 2 0 ]
 [v sprintf@f f `*.32Cuc  1 p 2 2 ]
@@ -434,18 +415,23 @@
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwdiv@quotient quotient `ui  1 a 2 22 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 21 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 21 ]
+[v ___lwdiv@counter counter `uc  1 a 1 23 ]
 "8
 [v ___lwdiv@dividend dividend `ui  1 p 2 17 ]
 [v ___lwdiv@divisor divisor `ui  1 p 2 19 ]
 "31
 } 0
-"134 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
-[v _limpa_tela limpa_tela `(v  1 e 1 0 ]
+"147 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+[v _telaConfiguracaoHora telaConfiguracaoHora `(v  1 e 1 0 ]
 {
-"140
+"154
+} 0
+"138
+[v _telaConfiguracaoDia telaConfiguracaoDia `(v  1 e 1 0 ]
+{
+"145
 } 0
 "16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\putrxlcd.c
 [v _putrsXLCD putrsXLCD `(v  1 e 1 0 ]
@@ -462,53 +448,53 @@
 [v WriteDataXLCD@data data `uc  1 a 1 18 ]
 "63
 } 0
-"203 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"223 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _trata_data trata_data `(v  1 e 1 0 ]
 {
-"225
+"245
 } 0
-"496
+"519
 [v _maquinaEstado maquinaEstado `(v  1 e 1 0 ]
 {
-"523
+"546
 } 0
-"483
+"506
 [v _verificaCRCBUFFCOM verificaCRCBUFFCOM `(v  1 e 1 0 ]
 {
-"485
-[v verificaCRCBUFFCOM@crc crc `ui  1 a 2 3 ]
-"484
-[v verificaCRCBUFFCOM@CRC_OK CRC_OK `uc  1 a 1 2 ]
-"487
-[v verificaCRCBUFFCOM@crc2 crc2 `uc  1 a 1 1 ]
-"486
-[v verificaCRCBUFFCOM@crc1 crc1 `uc  1 a 1 0 ]
-"494
+"508
+[v verificaCRCBUFFCOM@crc crc `ui  1 a 2 33 ]
+"507
+[v verificaCRCBUFFCOM@CRC_OK CRC_OK `uc  1 a 1 32 ]
+"510
+[v verificaCRCBUFFCOM@crc2 crc2 `uc  1 a 1 31 ]
+"509
+[v verificaCRCBUFFCOM@crc1 crc1 `uc  1 a 1 30 ]
+"517
 } 0
-"537
+"560
 [v _tx_data tx_data `(v  1 e 1 0 ]
 {
-"538
+"561
 [v tx_data@cont cont `i  1 a 2 17 ]
-"544
+"567
 } 0
-"398
+"421
 [v _trataComando trataComando `(v  1 e 1 0 ]
 {
-"399
-[v trataComando@iterator iterator `i  1 a 2 6 ]
-"479
+"422
+[v trataComando@iterator iterator `i  1 a 2 39 ]
+"502
 } 0
-"389
+"412
 [v _calculaCRCBUFFRESP calculaCRCBUFFRESP `(v  1 e 1 0 ]
 {
-"390
-[v calculaCRCBUFFRESP@crc crc `ui  1 a 2 2 ]
-"392
-[v calculaCRCBUFFRESP@crc2 crc2 `uc  1 a 1 1 ]
-"391
-[v calculaCRCBUFFRESP@crc1 crc1 `uc  1 a 1 0 ]
-"396
+"413
+[v calculaCRCBUFFRESP@crc crc `ui  1 a 2 35 ]
+"415
+[v calculaCRCBUFFRESP@crc2 crc2 `uc  1 a 1 34 ]
+"414
+[v calculaCRCBUFFRESP@crc1 crc1 `uc  1 a 1 33 ]
+"419
 } 0
 "11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
@@ -523,31 +509,31 @@
 [v memcpy@n n `ui  1 p 2 22 ]
 "32
 } 0
-"368 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"391 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _crc16 crc16 `(us  1 e 2 0 ]
 {
-"371
+"394
 [v crc16@crc crc `ui  1 a 2 28 ]
-"370
-[v crc16@data data `ui  1 a 2 26 ]
-"368
-[v crc16@i i `uc  1 a 1 25 ]
+"393
+[v crc16@data data `ui  1 a 2 25 ]
+"391
+[v crc16@i i `uc  1 a 1 27 ]
 [v crc16@data_p data_p `*.39uc  1 p 2 17 ]
 [v crc16@length length `us  1 p 2 19 ]
-"386
+"409
 } 0
-"525
+"548
 [v _enviaByte enviaByte `(v  1 e 1 0 ]
 {
 [v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
 [v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
 [v enviaByte@BYTE BYTE `uc  1 a 1 17 ]
-"533
+"556
 } 0
-"251
+"271
 [v _init_XLCD init_XLCD `(v  1 e 1 0 ]
 {
-"256
+"276
 } 0
 "19 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\openxlcd.c
 [v _OpenXLCD OpenXLCD `(v  1 e 1 0 ]
@@ -576,10 +562,10 @@
 [v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 21 ]
 "60
 } 0
-"357 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"380 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
 {
-"360
+"383
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 1 0 ]
@@ -602,10 +588,10 @@
 {
 "57
 } 0
-"353 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"376 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
 {
-"355
+"378
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d10tcyx.c
 [v _Delay10TCYx Delay10TCYx `(v  1 e 1 0 ]
@@ -615,13 +601,13 @@
 [v Delay10TCYx@unit unit `uc  1 a 1 17 ]
 "13
 } 0
-"240 C:\Users\marcu\Desktop\Sistemas Embarcados\DisplayLCDCalendario\display.X\main.c
+"260 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _despertar despertar `(v  1 e 1 0 ]
 {
-"249
+"269
 } 0
-"258
+"278
 [v _pic_isr pic_isr `IIL(v  1 e 1 0 ]
 {
-"282
+"302
 } 0
