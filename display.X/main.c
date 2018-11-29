@@ -20,18 +20,19 @@ typedef struct {
 } alarme;
 
 typedef struct{
-    double potencia;
+    int potencia;
     int dia;
 } consumoDia;
 
 typedef struct{
-    consumoDia potencia[30];
+    consumoDia consumoDia[30];
 } consumoMes;
 
 char semanaPrint[7]           = {'d', 's', 't', 'q', 'q', 's', 's'};
 int  semanaAlarme[7]          = {  0,  0,   0,    0,   0,   0,   0};
 
 tempo horaAtual;
+consumoMes energia;
 //#pragma WDT CONFIG = OFF
 #pragma config PBADEN = OFF
 #define _XTAL_FREQ 48000000
@@ -60,8 +61,11 @@ tempo horaAtual;
 #define comando_data	'2'//0x32
 #define comando_alarme	'3'//0x33
 
-#define CONST_CONFIGURACAO 1
-#define CONST_TELAINICIAL  2
+
+#define CONST_TELAINICIAL  1
+#define CONST_CONSUMO 2
+#define CONST_CONFIGURACAO 3
+#define CONST_ALARME 4
 
 
 unsigned char serial_data;
@@ -72,7 +76,8 @@ char revisao = 2;//0x32;
 char tela_atual = CONST_TELAINICIAL;
 char contador_interrupcao;
 char contador_um_segundo;
-char buffer[16];
+char mensagemL1[16];
+char mensagemL2[16];
 char dia = 04, mes = 06;
 int ano = 2018;
 char desp_hora = 5, desp_min = 10;
@@ -80,6 +85,9 @@ char contador_alarme = 0;
 char despertou = 0;
 int i;
 int funcao = 0;
+int tela = 1;
+int telaAntiga;
+char primeiraExec = 1;
 
 
 
@@ -112,113 +120,88 @@ OpenADC(ADC_FOSC_64 &              // ADC_FOSC_64:      Clock de convers�o do 
 }
 */
 
+void init_XLCD(){
+    OpenXLCD(FOUR_BIT&LINES_5X7);
+    while(BusyXLCD());
+    WriteCmdXLCD(0x06);
+    WriteCmdXLCD(0x0C);
+} 
+
 void calcula_temperatura(){
     temperatura = (ADResult/15)*constante_ad;
 }
 
-void tela_1(){
-    SetDDRamAddr(0x00);
-    putrsXLCD("Hora: ");
-    sprintf(buffer, "%d:%d:%d", horaAtual.h, horaAtual.m, horaAtual.s);
-    putrsXLCD(buffer);
+
+void escreveMensagem(char *l1,char *l2){
+    putrsXLCD(l1);
     SetDDRamAddr(0x40);
-    putrsXLCD("Data: ");
-    sprintf(buffer, "%d/%d/%d", dia, mes, ano);
-    putrsXLCD(buffer);
-    return;
-//    SetDDRamAddr(0x00);
-//    sprintf(buffer, "%d/%d/%d/%d", BUFFCOM[0], BUFFCOM[1], BUFFCOM[2], BUFFCOM[3]);
-//    putrsXLCD(buffer);
-//    SetDDRamAddr(0x40);
-//    sprintf(buffer, "%d/%d/%d", BUFFCOM[4], BUFFCOM[5], BUFFCOM[6]);
-//    putrsXLCD(buffer);
-//    
+    putrsXLCD(l2);
+    
 }
 
-void telaConfiguracaoDia(){
-    SetDDRamAddr(0x00);
-    putrsXLCD("Configuracao");
-    SetDDRamAddr(0x40);
-    putrsXLCD("Dia da semana");
-    putrsXLCD(buffer);
-    return;
+void limpaTela(){
+    init_XLCD();
 }
 
-void telaConfiguracaoHora(){
-    SetDDRamAddr(0x00);
-    putrsXLCD("Configuracao");
-    SetDDRamAddr(0x40);
-    putrsXLCD("Hora");
-    putrsXLCD(buffer);
-    return;
-}
-void telaInicial(){
-    SetDDRamAddr(0x00);
-    sprintf(buffer, "%d %d %d %d %d %d %d", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
-    SetDDRamAddr(0x40);
-    sprintf(buffer, "%d:%d", versao, revisao);
-    putrsXLCD(buffer);
-    return;
-}
-void tela_4(){
-    SetDDRamAddr(0x03);
-    putrsXLCD("TESTEer");
-    SetDDRamAddr(0x46);
-    sprintf(buffer,"%d C", temperatura);
-    putrsXLCD(buffer);
-    return;
-}
-//flag 
-void limpa_tela(){
-    WriteCmdXLCD(0x01);
-}
 
-void telas(char troca_tela){
-    if(tela_atual == CONST_CONFIGURACAO){
-        if (funcao == 0){
-            telaConfiguracaoDia();
-        } else {
-            telaConfiguracaoHora();
-        }
+void telas(){
+
+    switch(tela){
+        case  CONST_TELAINICIAL :
+            limpaTela();
+            sprintf(mensagemL1,"[%c %c %c %c %c %c %c]", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
+            sprintf(mensagemL2,"Horario : %d:%d:%d",horaAtual.h , horaAtual.m, horaAtual.s);   
+            escreveMensagem(mensagemL1,mensagemL2);
+        break;
+
+        case  CONST_CONSUMO :
+            limpaTela();
+            sprintf(mensagemL1,"CONSUMO : ");
+            sprintf(mensagemL2,"f*        %d W",energia.consumoDia[dia].potencia);   
+            escreveMensagem(mensagemL1,mensagemL2);
+
+        break;
+        
+        case  CONST_CONFIGURACAO :
+            limpaTela();
+            sprintf(mensagemL1,"CONFIGURACAO : ");
+            sprintf(mensagemL2,"f* on/off_sem/hor_rel");   
+            escreveMensagem(mensagemL1,mensagemL2);
+        break;
+        
+        case  CONST_ALARME :
+            limpaTela();
+            sprintf(mensagemL1,"ALARME : ");
+            sprintf(mensagemL2,"f* hora_liga/hora_desl.");   
+            escreveMensagem(mensagemL1,mensagemL2);
+
+        break;
+
+        default :
+            limpaTela();
+            sprintf(mensagemL1,"Defaltoss");
+            sprintf(mensagemL2,"tela %i", tela);   
+            escreveMensagem(mensagemL1,mensagemL2);
+
     }
-    if(tela_atual == CONST_TELAINICIAL) telaInicial();
-    if(tela_atual == 3) telaConfiguracaoHora();
-    if(tela_atual == 4) telaConfiguracaoHora();
 }
+
 
 void troca_telas(){
-  if(PORTDbits.RD0){
+    if(PORTDbits.RD0){
         __delay_ms(150);
-        telas(1);
-        while(PORTDbits.RD0){}
+
+        tela += tela;
+        if(tela>4){tela = 1;}
+        
+
+        while(PORTDbits.RD0){};
+        
     }
+
 }
 
-void trata_despertador(){
-    if(PORTDbits.RD1){
-        __delay_ms(150);
-        if(desp_hora == 24){
-            desp_hora = 0;
-        }else{
-            desp_hora+=1;
-        }
-        despertou = 0;
-        telas(0);
-        while(PORTDbits.RD1);
-    }
-    if(PORTDbits.RD2){
-        __delay_ms(150);
-        if(desp_min == 60){
-            desp_min = 0;
-        }else{
-            desp_min+=1;
-        }
-        despertou = 0;
-        telas(0);
-        
-        while(PORTDbits.RD2);
-    }   
-}
+
 
 void trata_data(){
     if(horaAtual.h == 24){
@@ -268,12 +251,7 @@ void despertar(){
     }
 }
 
-void init_XLCD(){
-    OpenXLCD(FOUR_BIT&LINES_5X7);
-    while(BusyXLCD());
-    WriteCmdXLCD(0x06);
-    WriteCmdXLCD(0x0C);
-} 
+
 
 void interrupt low_priority pic_isr(void){
     if(TMR0IF){
@@ -351,26 +329,31 @@ void main(void) {
     RCIE = 1; //Enable RX interrupt
     PEIE = 1; //Enable pheripheral interrupt (serial port is a pheripheral)
     
-    //putrsXLCD("Despertador");
-    //SetDDRamAddr(0x40);
-    //putrsXLCD("v01.00");
+    //inicializador de structs
     horaAtual.h = 0x0;
     horaAtual.m = 0x0;
     horaAtual.s = 0x0;
+    
+   
+
+    for (int b = 1; b<31; b++){
+        energia.consumoDia[b].potencia = 0;
+        energia.consumoDia[b].dia = 0;
+    }
+
+    
     while(1){
         if(contador_um_segundo == 1){
             contador_um_segundo = 0;
             trata_hora();
             trata_data();
             despertar();
-            telas(0);
             maquinaEstado();
-        }
-        if(tela_atual == 2){
-            trata_despertador();
+            telas();
         }
         troca_telas();
     }
+    
 }
 
 void DelayFor18TCY(void){
