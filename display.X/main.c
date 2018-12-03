@@ -63,9 +63,13 @@ consumoMes energia;
 
 
 #define CONST_TELAINICIAL  1
-#define CONST_CONSUMO 2
-#define CONST_CONFIGURACAO 3
-#define CONST_ALARME 4
+#define CONST_CONSUMO_INST 2
+#define CONST_CONSUMO_MEN 3
+#define CONST_CONSUMO_ANUAL 4
+#define CONST_CONFIGURACAO_SEM 5
+#define CONST_CONFIGURACAO_REL 6
+#define CONST_AUTOMO_LIGA 7
+#define CONST_AUTOMO_DESL 8
 
 
 unsigned char serial_data;
@@ -133,6 +137,7 @@ void calcula_temperatura(){
 
 
 void escreveMensagem(char *l1,char *l2){
+    SetDDRamAddr(0x00);
     putrsXLCD(l1);
     SetDDRamAddr(0x40);
     putrsXLCD(l2);
@@ -140,7 +145,10 @@ void escreveMensagem(char *l1,char *l2){
 }
 
 void limpaTela(){
-    init_XLCD();
+    SetDDRamAddr(0x00);
+    putrsXLCD("                ");
+    SetDDRamAddr(0x40);
+    putrsXLCD("                ");
 }
 
 
@@ -154,25 +162,56 @@ void telas(){
             escreveMensagem(mensagemL1,mensagemL2);
         break;
 
-        case  CONST_CONSUMO :
+        case  CONST_CONSUMO_INST :
             limpaTela();
-            sprintf(mensagemL1,"CONSUMO : ");
-            sprintf(mensagemL2,"f*        %d W",energia.consumoDia[dia].potencia);   
+            sprintf(mensagemL1,"CONSUMO INSTANTANEO: ");
+            sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);   
+            escreveMensagem(mensagemL1,mensagemL2);
+
+        break;
+
+        case  CONST_CONSUMO_MEN:
+            limpaTela();
+            sprintf(mensagemL1,"CONSUMO MENSAL: ");
+            sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);   
             escreveMensagem(mensagemL1,mensagemL2);
 
         break;
         
-        case  CONST_CONFIGURACAO :
+        case  CONST_CONSUMO_ANUAL :
             limpaTela();
-            sprintf(mensagemL1,"CONFIGURACAO : ");
-            sprintf(mensagemL2,"f* on/off_sem/hor_rel");   
+            sprintf(mensagemL1,"CONSUMO ANUAL: ");
+            sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);   
+            escreveMensagem(mensagemL1,mensagemL2);
+
+        break;
+        
+        case  CONST_CONFIGURACAO_SEM :
+            limpaTela();
+            sprintf(mensagemL1,"CONFIG. SEM.");
+            sprintf(mensagemL2,"[%c %c %c %c %c %c %c]", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
             escreveMensagem(mensagemL1,mensagemL2);
         break;
         
-        case  CONST_ALARME :
+        case  CONST_CONFIGURACAO_REL :
             limpaTela();
-            sprintf(mensagemL1,"ALARME : ");
-            sprintf(mensagemL2,"f* hora_liga/hora_desl.");   
+            sprintf(mensagemL1,"CONFIG. RELOGIO");
+            sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);
+            escreveMensagem(mensagemL1,mensagemL2);
+        break;
+
+        case  CONST_AUTOMO_LIGA :
+            limpaTela();
+            sprintf(mensagemL1,"HORARIO LIGAR");
+            sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);   
+            escreveMensagem(mensagemL1,mensagemL2);
+
+        break;
+
+        case  CONST_AUTOMO_DESL :
+            limpaTela();
+            sprintf(mensagemL1,"HORARIO DESL");
+            sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);   
             escreveMensagem(mensagemL1,mensagemL2);
 
         break;
@@ -182,7 +221,7 @@ void telas(){
             sprintf(mensagemL1,"Defaltoss");
             sprintf(mensagemL2,"tela %i", tela);   
             escreveMensagem(mensagemL1,mensagemL2);
-
+        break;
     }
 }
 
@@ -191,8 +230,8 @@ void troca_telas(){
     if(PORTDbits.RD0){
         __delay_ms(150);
 
-        tela += tela;
-        if(tela>4){tela = 1;}
+        tela ++;
+        if(tela>8){tela = 1;}
         
 
         while(PORTDbits.RD0){};

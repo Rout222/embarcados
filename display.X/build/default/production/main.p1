@@ -14,10 +14,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BusyXLCD `(uc ~T0 @X0 0 ef ]
 "117
 [v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-"137
-[v _putrsXLCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "97
 [v _SetDDRamAddr `(v ~T0 @X0 0 ef1`uc ]
+"137
+[v _putrsXLCD `(v ~T0 @X0 0 ef1`*Cuc ]
 "194 C:\Program Files (x86)\Microchip\xc8\v1.41\include\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "2674 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
@@ -128,7 +128,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RCIE `Vb ~T0 @X0 0 e@31981 ]
 "9658
 [v _PEIE `Vb ~T0 @X0 0 e@32662 ]
-"292 main.c
+"331 main.c
 [v _maquinaEstado `(v ~T0 @X0 0 ef ]
 "19 C:\Program Files (x86)\Microchip\xc8\v1.41\include\plib\delays.h
 [v _Delay10TCYx `(v ~T0 @X0 0 ef1`uc ]
@@ -136,9 +136,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
 "14 C:\Program Files (x86)\Microchip\xc8\v1.41\include\string.h
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
-"294 main.c
+"333 main.c
 [v _tx_data `(v ~T0 @X0 0 ef ]
-"293
+"332
 [v _enviaByte `(v ~T0 @X0 0 ef1`uc ]
 "10174 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f4550.h
 [v _TXIF `Vb ~T0 @X0 0 e@31988 ]
@@ -4423,50 +4423,50 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 35: consumoMes energia;
 "37
 [p x PBADEN=OFF ]
-"71
+"75
 [v _serial_data `uc ~T0 @X0 1 e ]
-[; ;main.c: 71: unsigned char serial_data;
-"72
+[; ;main.c: 75: unsigned char serial_data;
+"76
 [v _BUFFCOM `uc ~T0 @X0 -> 7 `i e ]
 [v _BUFFRESP `uc ~T0 @X0 -> 7 `i e ]
-[; ;main.c: 72: unsigned char BUFFCOM[7], BUFFRESP[7];
-"73
+[; ;main.c: 76: unsigned char BUFFCOM[7], BUFFRESP[7];
+"77
 [v _estado `uc ~T0 @X0 1 e ]
 [i _estado
 -> -> 0 `i `uc
 ]
-[; ;main.c: 73: char estado = 0;
-"74
+[; ;main.c: 77: char estado = 0;
+"78
 [v _versao `uc ~T0 @X0 1 e ]
 [i _versao
 -> -> 1 `i `uc
 ]
-[; ;main.c: 74: char versao = 1;
-"75
+[; ;main.c: 78: char versao = 1;
+"79
 [v _revisao `uc ~T0 @X0 1 e ]
 [i _revisao
 -> -> 2 `i `uc
 ]
-[; ;main.c: 75: char revisao = 2;
-"76
+[; ;main.c: 79: char revisao = 2;
+"80
 [v _tela_atual `uc ~T0 @X0 1 e ]
 [i _tela_atual
 -> -> 1 `i `uc
 ]
-[; ;main.c: 76: char tela_atual = 1;
-"77
-[v _contador_interrupcao `uc ~T0 @X0 1 e ]
-[; ;main.c: 77: char contador_interrupcao;
-"78
-[v _contador_um_segundo `uc ~T0 @X0 1 e ]
-[; ;main.c: 78: char contador_um_segundo;
-"79
-[v _mensagemL1 `uc ~T0 @X0 -> 16 `i e ]
-[; ;main.c: 79: char mensagemL1[16];
-"80
-[v _mensagemL2 `uc ~T0 @X0 -> 16 `i e ]
-[; ;main.c: 80: char mensagemL2[16];
+[; ;main.c: 80: char tela_atual = 1;
 "81
+[v _contador_interrupcao `uc ~T0 @X0 1 e ]
+[; ;main.c: 81: char contador_interrupcao;
+"82
+[v _contador_um_segundo `uc ~T0 @X0 1 e ]
+[; ;main.c: 82: char contador_um_segundo;
+"83
+[v _mensagemL1 `uc ~T0 @X0 -> 16 `i e ]
+[; ;main.c: 83: char mensagemL1[16];
+"84
+[v _mensagemL2 `uc ~T0 @X0 -> 16 `i e ]
+[; ;main.c: 84: char mensagemL2[16];
+"85
 [v _dia `uc ~T0 @X0 1 e ]
 [i _dia
 -> -> 4 `i `uc
@@ -4475,14 +4475,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _mes
 -> -> 6 `i `uc
 ]
-[; ;main.c: 81: char dia = 04, mes = 06;
-"82
+[; ;main.c: 85: char dia = 04, mes = 06;
+"86
 [v _ano `i ~T0 @X0 1 e ]
 [i _ano
 -> 2018 `i
 ]
-[; ;main.c: 82: int ano = 2018;
-"83
+[; ;main.c: 86: int ano = 2018;
+"87
 [v _desp_hora `uc ~T0 @X0 1 e ]
 [i _desp_hora
 -> -> 5 `i `uc
@@ -4491,1298 +4491,1399 @@ Version 3.2 HI-TECH Software Intermediate Code
 [i _desp_min
 -> -> 10 `i `uc
 ]
-[; ;main.c: 83: char desp_hora = 5, desp_min = 10;
-"84
+[; ;main.c: 87: char desp_hora = 5, desp_min = 10;
+"88
 [v _contador_alarme `uc ~T0 @X0 1 e ]
 [i _contador_alarme
 -> -> 0 `i `uc
 ]
-[; ;main.c: 84: char contador_alarme = 0;
-"85
+[; ;main.c: 88: char contador_alarme = 0;
+"89
 [v _despertou `uc ~T0 @X0 1 e ]
 [i _despertou
 -> -> 0 `i `uc
 ]
-[; ;main.c: 85: char despertou = 0;
-"86
+[; ;main.c: 89: char despertou = 0;
+"90
 [v _i `i ~T0 @X0 1 e ]
-[; ;main.c: 86: int i;
-"87
+[; ;main.c: 90: int i;
+"91
 [v _funcao `i ~T0 @X0 1 e ]
 [i _funcao
 -> 0 `i
 ]
-[; ;main.c: 87: int funcao = 0;
-"88
+[; ;main.c: 91: int funcao = 0;
+"92
 [v _tela `i ~T0 @X0 1 e ]
 [i _tela
 -> 1 `i
 ]
-[; ;main.c: 88: int tela = 1;
-"89
+[; ;main.c: 92: int tela = 1;
+"93
 [v _telaAntiga `i ~T0 @X0 1 e ]
-[; ;main.c: 89: int telaAntiga;
-"90
+[; ;main.c: 93: int telaAntiga;
+"94
 [v _primeiraExec `uc ~T0 @X0 1 e ]
 [i _primeiraExec
 -> -> 1 `i `uc
 ]
-[; ;main.c: 90: char primeiraExec = 1;
-"95
+[; ;main.c: 94: char primeiraExec = 1;
+"99
 [v _ADResult `ui ~T0 @X0 1 e ]
-[; ;main.c: 95: unsigned int ADResult;
-"96
+[; ;main.c: 99: unsigned int ADResult;
+"100
 [v _temperatura `f ~T0 @X0 1 e ]
 [i _temperatura
 -> -> 0 `i `f
 ]
-[; ;main.c: 96: float temperatura = 0;
-"97
+[; ;main.c: 100: float temperatura = 0;
+"101
 [v _calcula_temp `uc ~T0 @X0 1 e ]
 [i _calcula_temp
 -> -> 0 `i `uc
 ]
-[; ;main.c: 97: char calcula_temp = 0;
-"99
+[; ;main.c: 101: char calcula_temp = 0;
+"103
 [v _constante_ad `f ~T0 @X0 1 e ]
 [i _constante_ad
 -> / .5.0 -> -> 1023 `i `d `f
 ]
-[; ;main.c: 99: float constante_ad = 5.0/1023;
-"123
+[; ;main.c: 103: float constante_ad = 5.0/1023;
+"127
 [v _init_XLCD `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 123: void init_XLCD(){
+[; ;main.c: 127: void init_XLCD(){
 [e :U _init_XLCD ]
 [f ]
-[; ;main.c: 124: OpenXLCD(0b00101100&0b00111000);
-"124
+[; ;main.c: 128: OpenXLCD(0b00101100&0b00111000);
+"128
 [e ( _OpenXLCD (1 -> & -> 44 `i -> 56 `i `uc ]
-[; ;main.c: 125: while(BusyXLCD());
-"125
+[; ;main.c: 129: while(BusyXLCD());
+"129
 [e $U 407  ]
 [e :U 408 ]
 [e :U 407 ]
 [e $ != -> ( _BusyXLCD ..  `i -> -> -> 0 `i `uc `i 408  ]
 [e :U 409 ]
-[; ;main.c: 126: WriteCmdXLCD(0x06);
-"126
-[e ( _WriteCmdXLCD (1 -> -> 6 `i `uc ]
-[; ;main.c: 127: WriteCmdXLCD(0x0C);
-"127
-[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
-[; ;main.c: 128: }
-"128
-[e :UE 406 ]
-}
+[; ;main.c: 130: WriteCmdXLCD(0x06);
 "130
-[v _calcula_temperatura `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 130: void calcula_temperatura(){
-[e :U _calcula_temperatura ]
-[f ]
-[; ;main.c: 131: temperatura = (ADResult/15)*constante_ad;
+[e ( _WriteCmdXLCD (1 -> -> 6 `i `uc ]
+[; ;main.c: 131: WriteCmdXLCD(0x0C);
 "131
-[e = _temperatura * -> / _ADResult -> -> 15 `i `ui `f _constante_ad ]
+[e ( _WriteCmdXLCD (1 -> -> 12 `i `uc ]
 [; ;main.c: 132: }
 "132
+[e :UE 406 ]
+}
+"134
+[v _calcula_temperatura `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 134: void calcula_temperatura(){
+[e :U _calcula_temperatura ]
+[f ]
+[; ;main.c: 135: temperatura = (ADResult/15)*constante_ad;
+"135
+[e = _temperatura * -> / _ADResult -> -> 15 `i `ui `f _constante_ad ]
+[; ;main.c: 136: }
+"136
 [e :UE 410 ]
 }
-"135
+"139
 [v _escreveMensagem `(v ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;main.c: 135: void escreveMensagem(char *l1,char *l2){
+[; ;main.c: 139: void escreveMensagem(char *l1,char *l2){
 [e :U _escreveMensagem ]
 [v _l1 `*uc ~T0 @X0 1 r1 ]
 [v _l2 `*uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;main.c: 136: putrsXLCD(l1);
-"136
-[e ( _putrsXLCD (1 -> _l1 `*Cuc ]
-[; ;main.c: 137: SetDDRamAddr(0x40);
-"137
-[e ( _SetDDRamAddr (1 -> -> 64 `i `uc ]
-[; ;main.c: 138: putrsXLCD(l2);
-"138
-[e ( _putrsXLCD (1 -> _l2 `*Cuc ]
-[; ;main.c: 140: }
+[; ;main.c: 140: SetDDRamAddr(0x00);
 "140
+[e ( _SetDDRamAddr (1 -> -> 0 `i `uc ]
+[; ;main.c: 141: putrsXLCD(l1);
+"141
+[e ( _putrsXLCD (1 -> _l1 `*Cuc ]
+[; ;main.c: 142: SetDDRamAddr(0x40);
+"142
+[e ( _SetDDRamAddr (1 -> -> 64 `i `uc ]
+[; ;main.c: 143: putrsXLCD(l2);
+"143
+[e ( _putrsXLCD (1 -> _l2 `*Cuc ]
+[; ;main.c: 145: }
+"145
 [e :UE 411 ]
 }
-"142
+"147
 [v _limpaTela `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 142: void limpaTela(){
+[; ;main.c: 147: void limpaTela(){
 [e :U _limpaTela ]
 [f ]
-[; ;main.c: 143: init_XLCD();
-"143
-[e ( _init_XLCD ..  ]
-[; ;main.c: 144: }
-"144
+[; ;main.c: 148: SetDDRamAddr(0x00);
+"148
+[e ( _SetDDRamAddr (1 -> -> 0 `i `uc ]
+[; ;main.c: 149: putrsXLCD("                ");
+"149
+[e ( _putrsXLCD (1 :s 1C ]
+[; ;main.c: 150: SetDDRamAddr(0x40);
+"150
+[e ( _SetDDRamAddr (1 -> -> 64 `i `uc ]
+[; ;main.c: 151: putrsXLCD("                ");
+"151
+[e ( _putrsXLCD (1 :s 2C ]
+[; ;main.c: 152: }
+"152
 [e :UE 412 ]
 }
-"147
+"155
 [v _telas `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 147: void telas(){
+[; ;main.c: 155: void telas(){
 [e :U _telas ]
 [f ]
-[; ;main.c: 149: switch(tela){
-"149
+[; ;main.c: 157: switch(tela){
+"157
 [e $U 415  ]
 {
-[; ;main.c: 150: case 1 :
-"150
-[e :U 416 ]
-[; ;main.c: 151: limpaTela();
-"151
-[e ( _limpaTela ..  ]
-[; ;main.c: 152: sprintf(mensagemL1,"[%c %c %c %c %c %c %c]", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
-"152
-[e ( _sprintf (1 , , , , , , , (. , &U _mensagemL1 :s 1C -> *U + &U _semanaPrint * -> -> -> 0 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 1 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 2 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 3 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 4 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 5 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 6 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i ]
-[; ;main.c: 153: sprintf(mensagemL2,"Horario : %d:%d:%d",horaAtual.h , horaAtual.m, horaAtual.s);
-"153
-[e ( _sprintf (1 , , , (. , &U _mensagemL2 :s 2C -> . _horaAtual 0 `i -> . _horaAtual 1 `i -> . _horaAtual 2 `i ]
-[; ;main.c: 154: escreveMensagem(mensagemL1,mensagemL2);
-"154
-[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
-[; ;main.c: 155: break;
-"155
-[e $U 414  ]
-[; ;main.c: 157: case 2 :
-"157
-[e :U 417 ]
-[; ;main.c: 158: limpaTela();
+[; ;main.c: 158: case 1 :
 "158
-[e ( _limpaTela ..  ]
-[; ;main.c: 159: sprintf(mensagemL1,"CONSUMO : ");
+[e :U 416 ]
+[; ;main.c: 159: limpaTela();
 "159
-[e ( _sprintf (1 , &U _mensagemL1 :s 3C ]
-[; ;main.c: 160: sprintf(mensagemL2,"f*        %d W",energia.consumoDia[dia].potencia);
+[e ( _limpaTela ..  ]
+[; ;main.c: 160: sprintf(mensagemL1,"[%c %c %c %c %c %c %c]", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
 "160
-[e ( _sprintf (1 , (. , &U _mensagemL2 :s 4C . *U + &U . _energia 0 * -> _dia `ux -> -> # *U &U . _energia 0 `ui `ux 0 ]
-[; ;main.c: 161: escreveMensagem(mensagemL1,mensagemL2);
+[e ( _sprintf (1 , , , , , , , (. , &U _mensagemL1 :s 3C -> *U + &U _semanaPrint * -> -> -> 0 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 1 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 2 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 3 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 4 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 5 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 6 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i ]
+[; ;main.c: 161: sprintf(mensagemL2,"Horario : %d:%d:%d",horaAtual.h , horaAtual.m, horaAtual.s);
 "161
+[e ( _sprintf (1 , , , (. , &U _mensagemL2 :s 4C -> . _horaAtual 0 `i -> . _horaAtual 1 `i -> . _horaAtual 2 `i ]
+[; ;main.c: 162: escreveMensagem(mensagemL1,mensagemL2);
+"162
 [e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
 [; ;main.c: 163: break;
 "163
 [e $U 414  ]
-[; ;main.c: 165: case 3 :
+[; ;main.c: 165: case 2 :
 "165
-[e :U 418 ]
+[e :U 417 ]
 [; ;main.c: 166: limpaTela();
 "166
 [e ( _limpaTela ..  ]
-[; ;main.c: 167: sprintf(mensagemL1,"CONFIGURACAO : ");
+[; ;main.c: 167: sprintf(mensagemL1,"CONSUMO INSTANTANEO: ");
 "167
 [e ( _sprintf (1 , &U _mensagemL1 :s 5C ]
-[; ;main.c: 168: sprintf(mensagemL2,"f* on/off_sem/hor_rel");
+[; ;main.c: 168: sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);
 "168
-[e ( _sprintf (1 , &U _mensagemL2 :s 6C ]
+[e ( _sprintf (1 , (. , &U _mensagemL2 :s 6C . *U + &U . _energia 0 * -> _dia `ux -> -> # *U &U . _energia 0 `ui `ux 0 ]
 [; ;main.c: 169: escreveMensagem(mensagemL1,mensagemL2);
 "169
 [e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
-[; ;main.c: 170: break;
-"170
+[; ;main.c: 171: break;
+"171
 [e $U 414  ]
-[; ;main.c: 172: case 4 :
-"172
-[e :U 419 ]
-[; ;main.c: 173: limpaTela();
+[; ;main.c: 173: case 3:
 "173
-[e ( _limpaTela ..  ]
-[; ;main.c: 174: sprintf(mensagemL1,"ALARME : ");
+[e :U 418 ]
+[; ;main.c: 174: limpaTela();
 "174
-[e ( _sprintf (1 , &U _mensagemL1 :s 7C ]
-[; ;main.c: 175: sprintf(mensagemL2,"f* hora_liga/hora_desl.");
-"175
-[e ( _sprintf (1 , &U _mensagemL2 :s 8C ]
-[; ;main.c: 176: escreveMensagem(mensagemL1,mensagemL2);
-"176
-[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
-[; ;main.c: 178: break;
-"178
-[e $U 414  ]
-[; ;main.c: 180: default :
-"180
-[e :U 420 ]
-[; ;main.c: 181: limpaTela();
-"181
 [e ( _limpaTela ..  ]
-[; ;main.c: 182: sprintf(mensagemL1,"Defaltoss");
-"182
-[e ( _sprintf (1 , &U _mensagemL1 :s 9C ]
-[; ;main.c: 183: sprintf(mensagemL2,"tela %i", tela);
-"183
-[e ( _sprintf (1 , (. , &U _mensagemL2 :s 10C _tela ]
-[; ;main.c: 184: escreveMensagem(mensagemL1,mensagemL2);
-"184
+[; ;main.c: 175: sprintf(mensagemL1,"CONSUMO MENSAL: ");
+"175
+[e ( _sprintf (1 , &U _mensagemL1 :s 7C ]
+[; ;main.c: 176: sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);
+"176
+[e ( _sprintf (1 , (. , &U _mensagemL2 :s 8C . *U + &U . _energia 0 * -> _dia `ux -> -> # *U &U . _energia 0 `ui `ux 0 ]
+[; ;main.c: 177: escreveMensagem(mensagemL1,mensagemL2);
+"177
 [e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
-"186
-}
-[; ;main.c: 186: }
+[; ;main.c: 179: break;
+"179
 [e $U 414  ]
-"149
+[; ;main.c: 181: case 4 :
+"181
+[e :U 419 ]
+[; ;main.c: 182: limpaTela();
+"182
+[e ( _limpaTela ..  ]
+[; ;main.c: 183: sprintf(mensagemL1,"CONSUMO ANUAL: ");
+"183
+[e ( _sprintf (1 , &U _mensagemL1 :s 9C ]
+[; ;main.c: 184: sprintf(mensagemL2,"        %d W",energia.consumoDia[dia].potencia);
+"184
+[e ( _sprintf (1 , (. , &U _mensagemL2 :s 10C . *U + &U . _energia 0 * -> _dia `ux -> -> # *U &U . _energia 0 `ui `ux 0 ]
+[; ;main.c: 185: escreveMensagem(mensagemL1,mensagemL2);
+"185
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 187: break;
+"187
+[e $U 414  ]
+[; ;main.c: 189: case 5 :
+"189
+[e :U 420 ]
+[; ;main.c: 190: limpaTela();
+"190
+[e ( _limpaTela ..  ]
+[; ;main.c: 191: sprintf(mensagemL1,"CONFIG. SEM.");
+"191
+[e ( _sprintf (1 , &U _mensagemL1 :s 11C ]
+[; ;main.c: 192: sprintf(mensagemL2,"[%c %c %c %c %c %c %c]", semanaPrint[0], semanaPrint[1], semanaPrint[2], semanaPrint[3], semanaPrint[4], semanaPrint[5], semanaPrint[6]);
+"192
+[e ( _sprintf (1 , , , , , , , (. , &U _mensagemL2 :s 12C -> *U + &U _semanaPrint * -> -> -> 0 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 1 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 2 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 3 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 4 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 5 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i -> *U + &U _semanaPrint * -> -> -> 6 `i `ui `ux -> -> # *U &U _semanaPrint `ui `ux `i ]
+[; ;main.c: 193: escreveMensagem(mensagemL1,mensagemL2);
+"193
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 194: break;
+"194
+[e $U 414  ]
+[; ;main.c: 196: case 6 :
+"196
+[e :U 421 ]
+[; ;main.c: 197: limpaTela();
+"197
+[e ( _limpaTela ..  ]
+[; ;main.c: 198: sprintf(mensagemL1,"CONFIG. RELOGIO");
+"198
+[e ( _sprintf (1 , &U _mensagemL1 :s 13C ]
+[; ;main.c: 199: sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);
+"199
+[e ( _sprintf (1 , , (. , &U _mensagemL2 :s 14C -> . _horaAtual 0 `i -> . _horaAtual 1 `i ]
+[; ;main.c: 200: escreveMensagem(mensagemL1,mensagemL2);
+"200
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 201: break;
+"201
+[e $U 414  ]
+[; ;main.c: 203: case 7 :
+"203
+[e :U 422 ]
+[; ;main.c: 204: limpaTela();
+"204
+[e ( _limpaTela ..  ]
+[; ;main.c: 205: sprintf(mensagemL1,"HORARIO LIGAR");
+"205
+[e ( _sprintf (1 , &U _mensagemL1 :s 15C ]
+[; ;main.c: 206: sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);
+"206
+[e ( _sprintf (1 , , (. , &U _mensagemL2 :s 16C -> . _horaAtual 0 `i -> . _horaAtual 1 `i ]
+[; ;main.c: 207: escreveMensagem(mensagemL1,mensagemL2);
+"207
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 209: break;
+"209
+[e $U 414  ]
+[; ;main.c: 211: case 8 :
+"211
+[e :U 423 ]
+[; ;main.c: 212: limpaTela();
+"212
+[e ( _limpaTela ..  ]
+[; ;main.c: 213: sprintf(mensagemL1,"HORARIO DESL");
+"213
+[e ( _sprintf (1 , &U _mensagemL1 :s 17C ]
+[; ;main.c: 214: sprintf(mensagemL2,"Horario : %d:%d",horaAtual.h , horaAtual.m);
+"214
+[e ( _sprintf (1 , , (. , &U _mensagemL2 :s 18C -> . _horaAtual 0 `i -> . _horaAtual 1 `i ]
+[; ;main.c: 215: escreveMensagem(mensagemL1,mensagemL2);
+"215
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 217: break;
+"217
+[e $U 414  ]
+[; ;main.c: 219: default :
+"219
+[e :U 424 ]
+[; ;main.c: 220: limpaTela();
+"220
+[e ( _limpaTela ..  ]
+[; ;main.c: 221: sprintf(mensagemL1,"Defaltoss");
+"221
+[e ( _sprintf (1 , &U _mensagemL1 :s 19C ]
+[; ;main.c: 222: sprintf(mensagemL2,"tela %i", tela);
+"222
+[e ( _sprintf (1 , (. , &U _mensagemL2 :s 20C _tela ]
+[; ;main.c: 223: escreveMensagem(mensagemL1,mensagemL2);
+"223
+[e ( _escreveMensagem (2 , &U _mensagemL1 &U _mensagemL2 ]
+[; ;main.c: 224: break;
+"224
+[e $U 414  ]
+"225
+}
+[; ;main.c: 225: }
+[e $U 414  ]
+"157
 [e :U 415 ]
 [e [\ _tela , $ -> 1 `i 416
  , $ -> 2 `i 417
  , $ -> 3 `i 418
  , $ -> 4 `i 419
- 420 ]
-"186
+ , $ -> 5 `i 420
+ , $ -> 6 `i 421
+ , $ -> 7 `i 422
+ , $ -> 8 `i 423
+ 424 ]
+"225
 [e :U 414 ]
-[; ;main.c: 187: }
-"187
+[; ;main.c: 226: }
+"226
 [e :UE 413 ]
 }
-"190
+"229
 [v _troca_telas `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 190: void troca_telas(){
+[; ;main.c: 229: void troca_telas(){
 [e :U _troca_telas ]
 [f ]
-[; ;main.c: 191: if(PORTDbits.RD0){
-"191
-[e $ ! != -> . . _PORTDbits 0 0 `i -> -> -> 0 `i `Vuc `i 422  ]
+[; ;main.c: 230: if(PORTDbits.RD0){
+"230
+[e $ ! != -> . . _PORTDbits 0 0 `i -> -> -> 0 `i `Vuc `i 426  ]
 {
-[; ;main.c: 192: _delay((unsigned long)((150)*(48000000/4000.0)));
-"192
+[; ;main.c: 231: _delay((unsigned long)((150)*(48000000/4000.0)));
+"231
 [e ( __delay (1 -> * -> -> 150 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;main.c: 194: tela += tela;
-"194
-[e =+ _tela _tela ]
-[; ;main.c: 195: if(tela>4){tela = 1;}
-"195
-[e $ ! > _tela -> 4 `i 423  ]
+[; ;main.c: 233: tela ++;
+"233
+[e ++ _tela -> 1 `i ]
+[; ;main.c: 234: if(tela>8){tela = 1;}
+"234
+[e $ ! > _tela -> 8 `i 427  ]
 {
 [e = _tela -> 1 `i ]
 }
-[e :U 423 ]
-[; ;main.c: 198: while(PORTDbits.RD0){};
-"198
-[e $U 424  ]
-[e :U 425 ]
+[e :U 427 ]
+[; ;main.c: 237: while(PORTDbits.RD0){};
+"237
+[e $U 428  ]
+[e :U 429 ]
 {
-}
-[e :U 424 ]
-[e $ != -> . . _PORTDbits 0 0 `i -> -> -> 0 `i `Vuc `i 425  ]
-[e :U 426 ]
-"200
-}
-[e :U 422 ]
-[; ;main.c: 200: }
-[; ;main.c: 202: }
-"202
-[e :UE 421 ]
-}
-"206
-[v _trata_data `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 206: void trata_data(){
-[e :U _trata_data ]
-[f ]
-[; ;main.c: 207: if(horaAtual.h == 24){
-"207
-[e $ ! == -> . _horaAtual 0 `i -> 24 `i 428  ]
-{
-[; ;main.c: 208: dia+=1;
-"208
-[e =+ _dia -> -> 1 `i `uc ]
-[; ;main.c: 209: horaAtual.h = 0;
-"209
-[e = . _horaAtual 0 -> -> 0 `i `uc ]
-[; ;main.c: 210: return;
-"210
-[e $UE 427  ]
-"211
 }
 [e :U 428 ]
-[; ;main.c: 211: }
-[; ;main.c: 212: if(mes == 2 && dia == 28){
-"212
-[e $ ! && == -> _mes `i -> 2 `i == -> _dia `i -> 28 `i 429  ]
-{
-[; ;main.c: 213: mes+=1;
-"213
-[e =+ _mes -> -> 1 `i `uc ]
-[; ;main.c: 214: dia = 1;
-"214
-[e = _dia -> -> 1 `i `uc ]
-[; ;main.c: 215: return;
-"215
-[e $UE 427  ]
-"216
-}
-[e :U 429 ]
-[; ;main.c: 216: }
-[; ;main.c: 217: if(mes == 12 && dia == 30){
-"217
-[e $ ! && == -> _mes `i -> 12 `i == -> _dia `i -> 30 `i 430  ]
-{
-[; ;main.c: 218: ano+=1;
-"218
-[e =+ _ano -> 1 `i ]
-[; ;main.c: 219: mes = 1;
-"219
-[e = _mes -> -> 1 `i `uc ]
-[; ;main.c: 220: dia = 1;
-"220
-[e = _dia -> -> 1 `i `uc ]
-[; ;main.c: 221: return;
-"221
-[e $UE 427  ]
-"222
-}
+[e $ != -> . . _PORTDbits 0 0 `i -> -> -> 0 `i `Vuc `i 429  ]
 [e :U 430 ]
-[; ;main.c: 222: }
-[; ;main.c: 223: if(dia == 30){
-"223
-[e $ ! == -> _dia `i -> 30 `i 431  ]
-{
-[; ;main.c: 224: mes+=1;
-"224
-[e =+ _mes -> -> 1 `i `uc ]
-[; ;main.c: 225: dia = 1;
-"225
-[e = _dia -> -> 1 `i `uc ]
-[; ;main.c: 226: return;
-"226
-[e $UE 427  ]
-"227
-}
-[e :U 431 ]
-[; ;main.c: 227: }
-[; ;main.c: 228: }
-"228
-[e :UE 427 ]
-}
-"230
-[v _trata_hora `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 230: void trata_hora(){
-[e :U _trata_hora ]
-[f ]
-[; ;main.c: 231: if((horaAtual.s) == 60){
-"231
-[e $ ! == -> . _horaAtual 2 `i -> 60 `i 433  ]
-{
-[; ;main.c: 232: horaAtual.m += 1;
-"232
-[e =+ . _horaAtual 1 -> -> 1 `i `uc ]
-[; ;main.c: 233: horaAtual.s = 0;
-"233
-[e = . _horaAtual 2 -> -> 0 `i `uc ]
-[; ;main.c: 234: return;
-"234
-[e $UE 432  ]
-"235
-}
-[e :U 433 ]
-[; ;main.c: 235: }
-[; ;main.c: 236: if((horaAtual.m) == 60){
-"236
-[e $ ! == -> . _horaAtual 1 `i -> 60 `i 434  ]
-{
-[; ;main.c: 237: horaAtual.h+=1;
-"237
-[e =+ . _horaAtual 0 -> -> 1 `i `uc ]
-[; ;main.c: 238: horaAtual.m = 0;
-"238
-[e = . _horaAtual 1 -> -> 0 `i `uc ]
-[; ;main.c: 239: return;
 "239
-[e $UE 432  ]
-"240
 }
-[e :U 434 ]
-[; ;main.c: 240: }
+[e :U 426 ]
+[; ;main.c: 239: }
 [; ;main.c: 241: }
 "241
-[e :UE 432 ]
+[e :UE 425 ]
 }
-"243
-[v _despertar `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 243: void despertar(){
-[e :U _despertar ]
-[f ]
-[; ;main.c: 244: if((horaAtual.h) == desp_hora && (horaAtual.m) == desp_min && despertou == 0){
-"244
-[e $ ! && && == -> . _horaAtual 0 `i -> _desp_hora `i == -> . _horaAtual 1 `i -> _desp_min `i == -> _despertou `i -> 0 `i 436  ]
-{
-[; ;main.c: 245: PORTAbits.RA0 = 1;
 "245
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 246: contador_alarme += 1;
-"246
-[e =+ _contador_alarme -> -> 1 `i `uc ]
-"247
-}
-[e :U 436 ]
-[; ;main.c: 247: }
-[; ;main.c: 248: if(contador_alarme >= 15){
-"248
-[e $ ! >= -> _contador_alarme `i -> 15 `i 437  ]
+[v _trata_data `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 249: PORTAbits.RA0 = 0;
-"249
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 250: despertou = 1;
-"250
-[e = _despertou -> -> 1 `i `uc ]
-"251
-}
-[e :U 437 ]
-[; ;main.c: 251: }
-[; ;main.c: 252: }
-"252
-[e :UE 435 ]
-}
-[v F4879 `(v ~T0 @X0 1 tf ]
-"256
-[v _pic_isr `ILF4879 ~T0 @X0 1 e ]
-{
-[; ;main.c: 256: void interrupt low_priority pic_isr(void){
-[e :U _pic_isr ]
+[; ;main.c: 245: void trata_data(){
+[e :U _trata_data ]
 [f ]
-[; ;main.c: 257: if(TMR0IF){
+[; ;main.c: 246: if(horaAtual.h == 24){
+"246
+[e $ ! == -> . _horaAtual 0 `i -> 24 `i 432  ]
+{
+[; ;main.c: 247: dia+=1;
+"247
+[e =+ _dia -> -> 1 `i `uc ]
+[; ;main.c: 248: horaAtual.h = 0;
+"248
+[e = . _horaAtual 0 -> -> 0 `i `uc ]
+[; ;main.c: 249: return;
+"249
+[e $UE 431  ]
+"250
+}
+[e :U 432 ]
+[; ;main.c: 250: }
+[; ;main.c: 251: if(mes == 2 && dia == 28){
+"251
+[e $ ! && == -> _mes `i -> 2 `i == -> _dia `i -> 28 `i 433  ]
+{
+[; ;main.c: 252: mes+=1;
+"252
+[e =+ _mes -> -> 1 `i `uc ]
+[; ;main.c: 253: dia = 1;
+"253
+[e = _dia -> -> 1 `i `uc ]
+[; ;main.c: 254: return;
+"254
+[e $UE 431  ]
+"255
+}
+[e :U 433 ]
+[; ;main.c: 255: }
+[; ;main.c: 256: if(mes == 12 && dia == 30){
+"256
+[e $ ! && == -> _mes `i -> 12 `i == -> _dia `i -> 30 `i 434  ]
+{
+[; ;main.c: 257: ano+=1;
 "257
-[e $ ! _TMR0IF 439  ]
-{
-[; ;main.c: 258: TMR0 = 28021;
+[e =+ _ano -> 1 `i ]
+[; ;main.c: 258: mes = 1;
 "258
-[e = _TMR0 -> -> 28021 `i `us ]
-[; ;main.c: 260: INTCONbits.TMR0IF = 0;
+[e = _mes -> -> 1 `i `uc ]
+[; ;main.c: 259: dia = 1;
+"259
+[e = _dia -> -> 1 `i `uc ]
+[; ;main.c: 260: return;
 "260
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 261: contador_interrupcao++;
+[e $UE 431  ]
 "261
-[e ++ _contador_interrupcao -> -> 1 `i `uc ]
-[; ;main.c: 262: if(contador_interrupcao == 20){
+}
+[e :U 434 ]
+[; ;main.c: 261: }
+[; ;main.c: 262: if(dia == 30){
 "262
-[e $ ! == -> _contador_interrupcao `i -> 20 `i 440  ]
+[e $ ! == -> _dia `i -> 30 `i 435  ]
 {
-[; ;main.c: 263: contador_um_segundo += 1;
+[; ;main.c: 263: mes+=1;
 "263
-[e =+ _contador_um_segundo -> -> 1 `i `uc ]
-[; ;main.c: 264: contador_interrupcao = 0;
+[e =+ _mes -> -> 1 `i `uc ]
+[; ;main.c: 264: dia = 1;
 "264
-[e = _contador_interrupcao -> -> 0 `i `uc ]
-[; ;main.c: 265: horaAtual.s+=1;
+[e = _dia -> -> 1 `i `uc ]
+[; ;main.c: 265: return;
 "265
-[e =+ . _horaAtual 2 -> -> 1 `i `uc ]
+[e $UE 431  ]
 "266
 }
-[e :U 440 ]
-"267
-}
-[e :U 439 ]
+[e :U 435 ]
 [; ;main.c: 266: }
 [; ;main.c: 267: }
-[; ;main.c: 269: if(PIR1bits.RCIF == 1){
-"269
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 441  ]
-{
-[; ;main.c: 270: while(!RCIF);
-"270
-[e $U 442  ]
-[e :U 443 ]
-[e :U 442 ]
-[e $ ! _RCIF 443  ]
-[e :U 444 ]
-[; ;main.c: 271: BUFFCOM[i]= RCREG;
-"271
-[e = *U + &U _BUFFCOM * -> -> _i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux _RCREG ]
-[; ;main.c: 272: i++;
-"272
-[e ++ _i -> 1 `i ]
-[; ;main.c: 273: if(i>6){
-"273
-[e $ ! > _i -> 6 `i 445  ]
-{
-[; ;main.c: 274: PIR1bits.RCIF = 0;
-"274
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 275: i = 0;
-"275
-[e = _i -> 0 `i ]
-[; ;main.c: 276: estado = 1;
-"276
-[e = _estado -> -> 1 `i `uc ]
-"278
+"267
+[e :UE 431 ]
 }
-[e :U 445 ]
+"269
+[v _trata_hora `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 269: void trata_hora(){
+[e :U _trata_hora ]
+[f ]
+[; ;main.c: 270: if((horaAtual.s) == 60){
+"270
+[e $ ! == -> . _horaAtual 2 `i -> 60 `i 437  ]
+{
+[; ;main.c: 271: horaAtual.m += 1;
+"271
+[e =+ . _horaAtual 1 -> -> 1 `i `uc ]
+[; ;main.c: 272: horaAtual.s = 0;
+"272
+[e = . _horaAtual 2 -> -> 0 `i `uc ]
+[; ;main.c: 273: return;
+"273
+[e $UE 436  ]
+"274
+}
+[e :U 437 ]
+[; ;main.c: 274: }
+[; ;main.c: 275: if((horaAtual.m) == 60){
+"275
+[e $ ! == -> . _horaAtual 1 `i -> 60 `i 438  ]
+{
+[; ;main.c: 276: horaAtual.h+=1;
+"276
+[e =+ . _horaAtual 0 -> -> 1 `i `uc ]
+[; ;main.c: 277: horaAtual.m = 0;
+"277
+[e = . _horaAtual 1 -> -> 0 `i `uc ]
+[; ;main.c: 278: return;
+"278
+[e $UE 436  ]
 "279
 }
-[e :U 441 ]
-[; ;main.c: 278: }
+[e :U 438 ]
 [; ;main.c: 279: }
 [; ;main.c: 280: }
 "280
-[e :UE 438 ]
+[e :UE 436 ]
 }
-[; ;main.c: 288: unsigned short crc16(char *data_p, unsigned short length);
-[; ;main.c: 289: void calculaCRCBUFFRESP();
-[; ;main.c: 290: void trataComando();
-[; ;main.c: 291: void verificaCRCBUFFCOM();
-[; ;main.c: 292: void maquinaEstado();
-[; ;main.c: 293: void enviaByte(char BYTE);
-[; ;main.c: 294: void tx_data();
+"282
+[v _despertar `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 282: void despertar(){
+[e :U _despertar ]
+[f ]
+[; ;main.c: 283: if((horaAtual.h) == desp_hora && (horaAtual.m) == desp_min && despertou == 0){
+"283
+[e $ ! && && == -> . _horaAtual 0 `i -> _desp_hora `i == -> . _horaAtual 1 `i -> _desp_min `i == -> _despertou `i -> 0 `i 440  ]
+{
+[; ;main.c: 284: PORTAbits.RA0 = 1;
+"284
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 285: contador_alarme += 1;
+"285
+[e =+ _contador_alarme -> -> 1 `i `uc ]
+"286
+}
+[e :U 440 ]
+[; ;main.c: 286: }
+[; ;main.c: 287: if(contador_alarme >= 15){
+"287
+[e $ ! >= -> _contador_alarme `i -> 15 `i 441  ]
+{
+[; ;main.c: 288: PORTAbits.RA0 = 0;
+"288
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 289: despertou = 1;
+"289
+[e = _despertou -> -> 1 `i `uc ]
+"290
+}
+[e :U 441 ]
+[; ;main.c: 290: }
+[; ;main.c: 291: }
+"291
+[e :UE 439 ]
+}
+[v F4879 `(v ~T0 @X0 1 tf ]
+"295
+[v _pic_isr `ILF4879 ~T0 @X0 1 e ]
+{
+[; ;main.c: 295: void interrupt low_priority pic_isr(void){
+[e :U _pic_isr ]
+[f ]
+[; ;main.c: 296: if(TMR0IF){
+"296
+[e $ ! _TMR0IF 443  ]
+{
+[; ;main.c: 297: TMR0 = 28021;
 "297
+[e = _TMR0 -> -> 28021 `i `us ]
+[; ;main.c: 299: INTCONbits.TMR0IF = 0;
+"299
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 300: contador_interrupcao++;
+"300
+[e ++ _contador_interrupcao -> -> 1 `i `uc ]
+[; ;main.c: 301: if(contador_interrupcao == 20){
+"301
+[e $ ! == -> _contador_interrupcao `i -> 20 `i 444  ]
+{
+[; ;main.c: 302: contador_um_segundo += 1;
+"302
+[e =+ _contador_um_segundo -> -> 1 `i `uc ]
+[; ;main.c: 303: contador_interrupcao = 0;
+"303
+[e = _contador_interrupcao -> -> 0 `i `uc ]
+[; ;main.c: 304: horaAtual.s+=1;
+"304
+[e =+ . _horaAtual 2 -> -> 1 `i `uc ]
+"305
+}
+[e :U 444 ]
+"306
+}
+[e :U 443 ]
+[; ;main.c: 305: }
+[; ;main.c: 306: }
+[; ;main.c: 308: if(PIR1bits.RCIF == 1){
+"308
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 445  ]
+{
+[; ;main.c: 309: while(!RCIF);
+"309
+[e $U 446  ]
+[e :U 447 ]
+[e :U 446 ]
+[e $ ! _RCIF 447  ]
+[e :U 448 ]
+[; ;main.c: 310: BUFFCOM[i]= RCREG;
+"310
+[e = *U + &U _BUFFCOM * -> -> _i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux _RCREG ]
+[; ;main.c: 311: i++;
+"311
+[e ++ _i -> 1 `i ]
+[; ;main.c: 312: if(i>6){
+"312
+[e $ ! > _i -> 6 `i 449  ]
+{
+[; ;main.c: 313: PIR1bits.RCIF = 0;
+"313
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 314: i = 0;
+"314
+[e = _i -> 0 `i ]
+[; ;main.c: 315: estado = 1;
+"315
+[e = _estado -> -> 1 `i `uc ]
+"317
+}
+[e :U 449 ]
+"318
+}
+[e :U 445 ]
+[; ;main.c: 317: }
+[; ;main.c: 318: }
+[; ;main.c: 319: }
+"319
+[e :UE 442 ]
+}
+[; ;main.c: 327: unsigned short crc16(char *data_p, unsigned short length);
+[; ;main.c: 328: void calculaCRCBUFFRESP();
+[; ;main.c: 329: void trataComando();
+[; ;main.c: 330: void verificaCRCBUFFCOM();
+[; ;main.c: 331: void maquinaEstado();
+[; ;main.c: 332: void enviaByte(char BYTE);
+[; ;main.c: 333: void tx_data();
+"336
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 297: void main(void) {
+[; ;main.c: 336: void main(void) {
 [e :U _main ]
 [f ]
-[; ;main.c: 298: T0CONbits.TMR0ON = 0;
-"298
+[; ;main.c: 337: T0CONbits.TMR0ON = 0;
+"337
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 299: INTCONbits.TMR0IE = 1;
-"299
+[; ;main.c: 338: INTCONbits.TMR0IE = 1;
+"338
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 300: INTCONbits.TMR0IF = 0;
-"300
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 301: T0CONbits.T08BIT = 0;
-"301
-[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 302: T0CONbits.PSA = 0;
-"302
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 304: T0CONbits.T0PS0 = 1;
-"304
-[e = . . _T0CONbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 305: T0CONbits.T0PS1 = 1;
-"305
-[e = . . _T0CONbits 1 1 -> -> 1 `i `uc ]
-[; ;main.c: 306: T0CONbits.T0PS2 = 0;
-"306
-[e = . . _T0CONbits 1 2 -> -> 0 `i `uc ]
-[; ;main.c: 308: T0CONbits.T0CS = 0;
-"308
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 309: TMR0 = 32768;
-"309
-[e = _TMR0 -> -> 32768 `l `us ]
-[; ;main.c: 310: T0CONbits.TMR0ON = 1;
-"310
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 311: INTCONbits.GIEH = 1;
-"311
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;main.c: 312: INTCONbits.GIEL = 1;
-"312
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 315: TRISA = 0x00000000;
-"315
-[e = _TRISA -> -> 0 `i `uc ]
-[; ;main.c: 316: init_XLCD();
-"316
-[e ( _init_XLCD ..  ]
-[; ;main.c: 318: SPBRG = (((48000000/64)/9600)-1);
-"318
-[e = _SPBRG -> - / / -> 48000000 `l -> -> 64 `i `l -> -> 9600 `i `l -> -> 1 `i `l `uc ]
-[; ;main.c: 322: RCSTA = 0b10010000;
-"322
-[e = _RCSTA -> -> 144 `i `uc ]
-[; ;main.c: 323: TXSTA = 0b00100000;
-"323
-[e = _TXSTA -> -> 32 `i `uc ]
-[; ;main.c: 324: TRISCbits.RC6 = 0;
-"324
-[e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
-[; ;main.c: 325: TRISCbits.RC7 = 1;
-"325
-[e = . . _TRISCbits 1 5 -> -> 1 `i `uc ]
-[; ;main.c: 327: RCIF = 0;
-"327
-[e = _RCIF -> -> 0 `i `b ]
-[; ;main.c: 328: RCIP = 0;
-"328
-[e = _RCIP -> -> 0 `i `b ]
-[; ;main.c: 329: RCIE = 1;
-"329
-[e = _RCIE -> -> 1 `i `b ]
-[; ;main.c: 330: PEIE = 1;
-"330
-[e = _PEIE -> -> 1 `i `b ]
-[; ;main.c: 333: horaAtual.h = 0x0;
-"333
-[e = . _horaAtual 0 -> -> 0 `i `uc ]
-[; ;main.c: 334: horaAtual.m = 0x0;
-"334
-[e = . _horaAtual 1 -> -> 0 `i `uc ]
-[; ;main.c: 335: horaAtual.s = 0x0;
-"335
-[e = . _horaAtual 2 -> -> 0 `i `uc ]
-[; ;main.c: 339: for (int b = 1; b<31; b++){
+[; ;main.c: 339: INTCONbits.TMR0IF = 0;
 "339
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 340: T0CONbits.T08BIT = 0;
+"340
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 341: T0CONbits.PSA = 0;
+"341
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 343: T0CONbits.T0PS0 = 1;
+"343
+[e = . . _T0CONbits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 344: T0CONbits.T0PS1 = 1;
+"344
+[e = . . _T0CONbits 1 1 -> -> 1 `i `uc ]
+[; ;main.c: 345: T0CONbits.T0PS2 = 0;
+"345
+[e = . . _T0CONbits 1 2 -> -> 0 `i `uc ]
+[; ;main.c: 347: T0CONbits.T0CS = 0;
+"347
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 348: TMR0 = 32768;
+"348
+[e = _TMR0 -> -> 32768 `l `us ]
+[; ;main.c: 349: T0CONbits.TMR0ON = 1;
+"349
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 350: INTCONbits.GIEH = 1;
+"350
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;main.c: 351: INTCONbits.GIEL = 1;
+"351
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+[; ;main.c: 354: TRISA = 0x00000000;
+"354
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 355: init_XLCD();
+"355
+[e ( _init_XLCD ..  ]
+[; ;main.c: 357: SPBRG = (((48000000/64)/9600)-1);
+"357
+[e = _SPBRG -> - / / -> 48000000 `l -> -> 64 `i `l -> -> 9600 `i `l -> -> 1 `i `l `uc ]
+[; ;main.c: 361: RCSTA = 0b10010000;
+"361
+[e = _RCSTA -> -> 144 `i `uc ]
+[; ;main.c: 362: TXSTA = 0b00100000;
+"362
+[e = _TXSTA -> -> 32 `i `uc ]
+[; ;main.c: 363: TRISCbits.RC6 = 0;
+"363
+[e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
+[; ;main.c: 364: TRISCbits.RC7 = 1;
+"364
+[e = . . _TRISCbits 1 5 -> -> 1 `i `uc ]
+[; ;main.c: 366: RCIF = 0;
+"366
+[e = _RCIF -> -> 0 `i `b ]
+[; ;main.c: 367: RCIP = 0;
+"367
+[e = _RCIP -> -> 0 `i `b ]
+[; ;main.c: 368: RCIE = 1;
+"368
+[e = _RCIE -> -> 1 `i `b ]
+[; ;main.c: 369: PEIE = 1;
+"369
+[e = _PEIE -> -> 1 `i `b ]
+[; ;main.c: 372: horaAtual.h = 0x0;
+"372
+[e = . _horaAtual 0 -> -> 0 `i `uc ]
+[; ;main.c: 373: horaAtual.m = 0x0;
+"373
+[e = . _horaAtual 1 -> -> 0 `i `uc ]
+[; ;main.c: 374: horaAtual.s = 0x0;
+"374
+[e = . _horaAtual 2 -> -> 0 `i `uc ]
+[; ;main.c: 378: for (int b = 1; b<31; b++){
+"378
 {
 [v _b `i ~T0 @X0 1 a ]
 [e = _b -> 1 `i ]
-[e $ < _b -> 31 `i 447  ]
-[e $U 448  ]
-[e :U 447 ]
-{
-[; ;main.c: 340: energia.consumoDia[b].potencia = 0;
-"340
-[e = . *U + &U . _energia 0 * -> -> _b `ui `ux -> -> # *U &U . _energia 0 `ui `ux 0 -> 0 `i ]
-[; ;main.c: 341: energia.consumoDia[b].dia = 0;
-"341
-[e = . *U + &U . _energia 0 * -> -> _b `ui `ux -> -> # *U &U . _energia 0 `ui `ux 1 -> 0 `i ]
-"342
-}
-"339
-[e ++ _b -> 1 `i ]
-[e $ < _b -> 31 `i 447  ]
-[e :U 448 ]
-"342
-}
-[; ;main.c: 342: }
-[; ;main.c: 345: while(1){
-"345
+[e $ < _b -> 31 `i 451  ]
+[e $U 452  ]
 [e :U 451 ]
 {
-[; ;main.c: 346: if(contador_um_segundo == 1){
-"346
-[e $ ! == -> _contador_um_segundo `i -> 1 `i 453  ]
-{
-[; ;main.c: 347: contador_um_segundo = 0;
-"347
-[e = _contador_um_segundo -> -> 0 `i `uc ]
-[; ;main.c: 348: trata_hora();
-"348
-[e ( _trata_hora ..  ]
-[; ;main.c: 349: trata_data();
-"349
-[e ( _trata_data ..  ]
-[; ;main.c: 350: despertar();
-"350
-[e ( _despertar ..  ]
-[; ;main.c: 351: maquinaEstado();
-"351
-[e ( _maquinaEstado ..  ]
-[; ;main.c: 352: telas();
-"352
-[e ( _telas ..  ]
-"353
+[; ;main.c: 379: energia.consumoDia[b].potencia = 0;
+"379
+[e = . *U + &U . _energia 0 * -> -> _b `ui `ux -> -> # *U &U . _energia 0 `ui `ux 0 -> 0 `i ]
+[; ;main.c: 380: energia.consumoDia[b].dia = 0;
+"380
+[e = . *U + &U . _energia 0 * -> -> _b `ui `ux -> -> # *U &U . _energia 0 `ui `ux 1 -> 0 `i ]
+"381
 }
-[e :U 453 ]
-[; ;main.c: 353: }
-[; ;main.c: 354: troca_telas();
-"354
-[e ( _troca_telas ..  ]
-"355
-}
-[e :U 450 ]
-"345
-[e $U 451  ]
+"378
+[e ++ _b -> 1 `i ]
+[e $ < _b -> 31 `i 451  ]
 [e :U 452 ]
-[; ;main.c: 355: }
-[; ;main.c: 357: }
-"357
-[e :UE 446 ]
+"381
 }
-"359
+[; ;main.c: 381: }
+[; ;main.c: 384: while(1){
+"384
+[e :U 455 ]
+{
+[; ;main.c: 385: if(contador_um_segundo == 1){
+"385
+[e $ ! == -> _contador_um_segundo `i -> 1 `i 457  ]
+{
+[; ;main.c: 386: contador_um_segundo = 0;
+"386
+[e = _contador_um_segundo -> -> 0 `i `uc ]
+[; ;main.c: 387: trata_hora();
+"387
+[e ( _trata_hora ..  ]
+[; ;main.c: 388: trata_data();
+"388
+[e ( _trata_data ..  ]
+[; ;main.c: 389: despertar();
+"389
+[e ( _despertar ..  ]
+[; ;main.c: 390: maquinaEstado();
+"390
+[e ( _maquinaEstado ..  ]
+[; ;main.c: 391: telas();
+"391
+[e ( _telas ..  ]
+"392
+}
+[e :U 457 ]
+[; ;main.c: 392: }
+[; ;main.c: 393: troca_telas();
+"393
+[e ( _troca_telas ..  ]
+"394
+}
+[e :U 454 ]
+"384
+[e $U 455  ]
+[e :U 456 ]
+[; ;main.c: 394: }
+[; ;main.c: 396: }
+"396
+[e :UE 450 ]
+}
+"398
 [v _DelayFor18TCY `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 359: void DelayFor18TCY(void){
+[; ;main.c: 398: void DelayFor18TCY(void){
 [e :U _DelayFor18TCY ]
 [f ]
-[; ;main.c: 360: Delay10TCYx(120);
-"360
+[; ;main.c: 399: Delay10TCYx(120);
+"399
 [e ( _Delay10TCYx (1 -> -> 120 `i `uc ]
-[; ;main.c: 361: }
-"361
-[e :UE 454 ]
+[; ;main.c: 400: }
+"400
+[e :UE 458 ]
 }
-"363
+"402
 [v _DelayPORXLCD `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 363: void DelayPORXLCD(void){
+[; ;main.c: 402: void DelayPORXLCD(void){
 [e :U _DelayPORXLCD ]
 [f ]
-[; ;main.c: 364: Delay1KTCYx(180);
-"364
+[; ;main.c: 403: Delay1KTCYx(180);
+"403
 [e ( _Delay1KTCYx (1 -> -> 180 `i `uc ]
-[; ;main.c: 365: return;
-"365
-[e $UE 455  ]
-[; ;main.c: 366: }
-"366
-[e :UE 455 ]
+[; ;main.c: 404: return;
+"404
+[e $UE 459  ]
+[; ;main.c: 405: }
+"405
+[e :UE 459 ]
 }
-"368
+"407
 [v _DelayXLCD `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 368: void DelayXLCD(void){
+[; ;main.c: 407: void DelayXLCD(void){
 [e :U _DelayXLCD ]
 [f ]
-[; ;main.c: 369: Delay1KTCYx(60);
-"369
+[; ;main.c: 408: Delay1KTCYx(60);
+"408
 [e ( _Delay1KTCYx (1 -> -> 60 `i `uc ]
-[; ;main.c: 370: return;
-"370
-[e $UE 456  ]
-[; ;main.c: 371: }
-"371
-[e :UE 456 ]
+[; ;main.c: 409: return;
+"409
+[e $UE 460  ]
+[; ;main.c: 410: }
+"410
+[e :UE 460 ]
 }
-"374
+"413
 [v _crc16 `(us ~T0 @X0 1 ef2`*uc`us ]
 {
-[; ;main.c: 374: unsigned short crc16(char *data_p, unsigned short length){
+[; ;main.c: 413: unsigned short crc16(char *data_p, unsigned short length){
 [e :U _crc16 ]
 [v _data_p `*uc ~T0 @X0 1 r1 ]
 [v _length `us ~T0 @X0 1 r2 ]
 [f ]
 [v _i `uc ~T0 @X0 1 a ]
-"376
+"415
 [v _data `ui ~T0 @X0 1 a ]
-"377
+"416
 [v _crc `ui ~T0 @X0 1 a ]
-[; ;main.c: 375: unsigned char i;
-[; ;main.c: 376: unsigned int data;
-[; ;main.c: 377: unsigned int crc = 0xffff;
+[; ;main.c: 414: unsigned char i;
+[; ;main.c: 415: unsigned int data;
+[; ;main.c: 416: unsigned int crc = 0xffff;
 [e = _crc -> 65535 `ui ]
-[; ;main.c: 378: if (length == 0)
-"378
-[e $ ! == -> _length `ui -> -> 0 `i `ui 458  ]
-[; ;main.c: 379: return (~crc);
-"379
+[; ;main.c: 417: if (length == 0)
+"417
+[e $ ! == -> _length `ui -> -> 0 `i `ui 462  ]
+[; ;main.c: 418: return (~crc);
+"418
 [e ) -> ~ _crc `us ]
-[e $UE 457  ]
-[e :U 458 ]
-[; ;main.c: 380: do{
-"380
-[e :U 461 ]
+[e $UE 461  ]
+[e :U 462 ]
+[; ;main.c: 419: do{
+"419
+[e :U 465 ]
 {
-[; ;main.c: 381: for (i=0, data=(unsigned int)0xff & *data_p++; i < 8; i++, data >>= 1){
-"381
+[; ;main.c: 420: for (i=0, data=(unsigned int)0xff & *data_p++; i < 8; i++, data >>= 1){
+"420
 {
 [e ; = _i -> -> 0 `i `uc = _data & -> -> 255 `i `ui -> *U ++ _data_p * -> -> 1 `i `x -> -> # *U _data_p `i `x `ui ]
-[e $ < -> _i `i -> 8 `i 462  ]
-[e $U 463  ]
-[e :U 462 ]
-{
-[; ;main.c: 382: if ((crc & 0x0001) ^ (data & 0x0001))
-"382
-[e $ ! != ^ & _crc -> -> 1 `i `ui & _data -> -> 1 `i `ui -> -> 0 `i `ui 465  ]
-[; ;main.c: 383: crc = (crc >> 1) ^ 0x8408;
-"383
-[e = _crc ^ >> _crc -> 1 `i -> 33800 `ui ]
-[e $U 466  ]
-"384
-[e :U 465 ]
-[; ;main.c: 384: else crc >>= 1;
-[e =>> _crc -> 1 `i ]
+[e $ < -> _i `i -> 8 `i 466  ]
+[e $U 467  ]
 [e :U 466 ]
-"385
+{
+[; ;main.c: 421: if ((crc & 0x0001) ^ (data & 0x0001))
+"421
+[e $ ! != ^ & _crc -> -> 1 `i `ui & _data -> -> 1 `i `ui -> -> 0 `i `ui 469  ]
+[; ;main.c: 422: crc = (crc >> 1) ^ 0x8408;
+"422
+[e = _crc ^ >> _crc -> 1 `i -> 33800 `ui ]
+[e $U 470  ]
+"423
+[e :U 469 ]
+[; ;main.c: 423: else crc >>= 1;
+[e =>> _crc -> 1 `i ]
+[e :U 470 ]
+"424
 }
-"381
+"420
 [e ; ++ _i -> -> 1 `i `uc =>> _data -> 1 `i ]
-[e $ < -> _i `i -> 8 `i 462  ]
-[e :U 463 ]
-"385
+[e $ < -> _i `i -> 8 `i 466  ]
+[e :U 467 ]
+"424
 }
-"386
+"425
 }
-[; ;main.c: 385: }
-[; ;main.c: 386: } while (--length);
-[e $ != -> =- _length -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 461  ]
-[e :U 460 ]
-[; ;main.c: 388: crc = ~crc;
-"388
+[; ;main.c: 424: }
+[; ;main.c: 425: } while (--length);
+[e $ != -> =- _length -> -> 1 `i `us `ui -> -> -> 0 `i `us `ui 465  ]
+[e :U 464 ]
+[; ;main.c: 427: crc = ~crc;
+"427
 [e = _crc ~ _crc ]
-[; ;main.c: 389: data = crc;
-"389
+[; ;main.c: 428: data = crc;
+"428
 [e = _data _crc ]
-[; ;main.c: 390: crc = (crc << 8) | (data >> 8 & 0xff);
-"390
+[; ;main.c: 429: crc = (crc << 8) | (data >> 8 & 0xff);
+"429
 [e = _crc | << _crc -> 8 `i & >> _data -> 8 `i -> -> 255 `i `ui ]
-[; ;main.c: 391: return (crc);
-"391
+[; ;main.c: 430: return (crc);
+"430
 [e ) -> _crc `us ]
-[e $UE 457  ]
-[; ;main.c: 392: }
-"392
-[e :UE 457 ]
+[e $UE 461  ]
+[; ;main.c: 431: }
+"431
+[e :UE 461 ]
 }
-"395
+"434
 [v _calculaCRCBUFFRESP `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 395: void calculaCRCBUFFRESP(){
+[; ;main.c: 434: void calculaCRCBUFFRESP(){
 [e :U _calculaCRCBUFFRESP ]
 [f ]
-"396
+"435
 [v _crc `ui ~T0 @X0 1 a ]
-[; ;main.c: 396: unsigned int crc = crc16(BUFFCOM, 5);
+[; ;main.c: 435: unsigned int crc = crc16(BUFFCOM, 5);
 [e = _crc -> ( _crc16 (2 , &U _BUFFCOM -> -> 5 `i `us `ui ]
-"397
+"436
 [v _crc1 `uc ~T0 @X0 1 a ]
-[; ;main.c: 397: unsigned char crc1 = crc >> 8;
+[; ;main.c: 436: unsigned char crc1 = crc >> 8;
 [e = _crc1 -> >> _crc -> 8 `i `uc ]
-"398
+"437
 [v _crc2 `uc ~T0 @X0 1 a ]
-[; ;main.c: 398: unsigned char crc2 = crc & 0xFF;
+[; ;main.c: 437: unsigned char crc2 = crc & 0xFF;
 [e = _crc2 -> & _crc -> -> 255 `i `ui `uc ]
-[; ;main.c: 399: memcpy(&BUFFCOM[5], crc1, sizeof(BUFFCOM[5]));
-"399
+[; ;main.c: 438: memcpy(&BUFFCOM[5], crc1, sizeof(BUFFCOM[5]));
+"438
 [e ( _memcpy (3 , , -> &U *U + &U _BUFFCOM * -> -> -> 5 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*v -> _crc1 `*Cv -> # *U + &U _BUFFCOM * -> -> -> 5 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
-[; ;main.c: 400: memcpy(&BUFFCOM[6], crc2, sizeof(BUFFCOM[6]));
-"400
+[; ;main.c: 439: memcpy(&BUFFCOM[6], crc2, sizeof(BUFFCOM[6]));
+"439
 [e ( _memcpy (3 , , -> &U *U + &U _BUFFCOM * -> -> -> 6 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*v -> _crc2 `*Cv -> # *U + &U _BUFFCOM * -> -> -> 6 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
-[; ;main.c: 401: estado = 3;
-"401
+[; ;main.c: 440: estado = 3;
+"440
 [e = _estado -> -> 3 `i `uc ]
-[; ;main.c: 402: }
-"402
-[e :UE 467 ]
+[; ;main.c: 441: }
+"441
+[e :UE 471 ]
 }
-"404
+"443
 [v _trataComando `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 404: void trataComando(){
+[; ;main.c: 443: void trataComando(){
 [e :U _trataComando ]
 [f ]
-"405
-[v _iterator `i ~T0 @X0 1 a ]
-[; ;main.c: 405: int iterator;
-[; ;main.c: 407: switch(BUFFCOM[0]){
-"407
-[e $U 470  ]
-{
-[; ;main.c: 408: case '1':
-"408
-[e :U 471 ]
-[; ;main.c: 409: memcpy(&BUFFRESP[0], &BUFFCOM[0], sizeof(BUFFCOM[0]));
-"409
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
-[; ;main.c: 410: memcpy(&BUFFRESP[1], &BUFFCOM[1], sizeof(BUFFCOM[1]));
-"410
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
-[; ;main.c: 411: switch(BUFFCOM[1]){
-"411
-[e $U 473  ]
-{
-[; ;main.c: 413: case '0':
-"413
-[e :U 474 ]
-[; ;main.c: 414: memcpy(&BUFFRESP[2], &versao, sizeof(versao));
-"414
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U _versao `*Cv -> # _versao `ui ]
-[; ;main.c: 415: memcpy(&BUFFRESP[3], &revisao, sizeof(revisao));
-"415
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U _revisao `*Cv -> # _revisao `ui ]
-[; ;main.c: 416: memcpy(&BUFFRESP[4], 0x0, sizeof(char));
-"416
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> -> 0 `i `*Cv -> # `uc `ui ]
-[; ;main.c: 420: break;
-"420
-[e $U 472  ]
-[; ;main.c: 423: case '1':
-"423
-[e :U 475 ]
-[; ;main.c: 424: BUFFRESP[2] = horaAtual.h;
-"424
-[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 0 ]
-[; ;main.c: 425: BUFFRESP[3] = horaAtual.m;
-"425
-[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 1 ]
-[; ;main.c: 426: BUFFRESP[4] = horaAtual.s;
-"426
-[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 2 ]
-[; ;main.c: 427: break;
-"427
-[e $U 472  ]
-[; ;main.c: 430: case '2':
-"430
-[e :U 476 ]
-[; ;main.c: 431: BUFFRESP[2] = dia;
-"431
-[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _dia ]
-[; ;main.c: 432: BUFFRESP[3] = mes;
-"432
-[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _mes ]
-[; ;main.c: 433: BUFFRESP[4] = ano;
-"433
-[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux -> _ano `uc ]
-[; ;main.c: 434: break;
-"434
-[e $U 472  ]
-[; ;main.c: 437: case '3':
-"437
-[e :U 477 ]
-[; ;main.c: 438: BUFFRESP[2] = desp_hora;
-"438
-[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _desp_hora ]
-[; ;main.c: 439: BUFFRESP[3] = desp_min;
-"439
-[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _desp_min ]
-[; ;main.c: 440: BUFFRESP[4] = 0xFF;
-"440
-[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux -> -> 255 `i `uc ]
-[; ;main.c: 441: break;
-"441
-[e $U 472  ]
-[; ;main.c: 443: default:
-"443
-[e :U 478 ]
-[; ;main.c: 444: break;
 "444
-[e $U 472  ]
-"445
-}
-[; ;main.c: 445: }
-[e $U 472  ]
-"411
-[e :U 473 ]
-[e [\ *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 48 `ui `uc 474
- , $ -> -> 49 `ui `uc 475
- , $ -> -> 50 `ui `uc 476
- , $ -> -> 51 `ui `uc 477
- 478 ]
-"445
-[e :U 472 ]
-[; ;main.c: 446: break;
+[v _iterator `i ~T0 @X0 1 a ]
+[; ;main.c: 444: int iterator;
+[; ;main.c: 446: switch(BUFFCOM[0]){
 "446
-[e $U 469  ]
-[; ;main.c: 448: case '2':
+[e $U 474  ]
+{
+[; ;main.c: 447: case '1':
+"447
+[e :U 475 ]
+[; ;main.c: 448: memcpy(&BUFFRESP[0], &BUFFCOM[0], sizeof(BUFFCOM[0]));
 "448
-[e :U 479 ]
-[; ;main.c: 449: for(iterator = 0; iterator < 5; iterator++){
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
+[; ;main.c: 449: memcpy(&BUFFRESP[1], &BUFFCOM[1], sizeof(BUFFCOM[1]));
 "449
-{
-[e = _iterator -> 0 `i ]
-[e $ < _iterator -> 5 `i 480  ]
-[e $U 481  ]
-[e :U 480 ]
-{
-[; ;main.c: 450: memcpy(&BUFFRESP[iterator], &BUFFCOM[iterator], sizeof(BUFFCOM[iterator]));
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
+[; ;main.c: 450: switch(BUFFCOM[1]){
 "450
-[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> _iterator `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> _iterator `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> _iterator `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
-"451
-}
-"449
-[e ++ _iterator -> 1 `i ]
-[e $ < _iterator -> 5 `i 480  ]
-[e :U 481 ]
-"451
-}
-[; ;main.c: 451: }
-[; ;main.c: 453: switch(BUFFCOM[1]){
-"453
-[e $U 484  ]
+[e $U 477  ]
 {
-[; ;main.c: 455: case '0':
+[; ;main.c: 452: case '0':
+"452
+[e :U 478 ]
+[; ;main.c: 453: memcpy(&BUFFRESP[2], &versao, sizeof(versao));
+"453
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U _versao `*Cv -> # _versao `ui ]
+[; ;main.c: 454: memcpy(&BUFFRESP[3], &revisao, sizeof(revisao));
+"454
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U _revisao `*Cv -> # _revisao `ui ]
+[; ;main.c: 455: memcpy(&BUFFRESP[4], 0x0, sizeof(char));
 "455
-[e :U 485 ]
-[; ;main.c: 456: versao = BUFFCOM[2]-48;
-"456
-[e = _versao -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 457: revisao = BUFFCOM[3]-48;
-"457
-[e = _revisao -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 458: break;
-"458
-[e $U 483  ]
-[; ;main.c: 461: case '1':
-"461
-[e :U 486 ]
-[; ;main.c: 462: horaAtual.h = (BUFFCOM[2]-48);
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> -> 0 `i `*Cv -> # `uc `ui ]
+[; ;main.c: 459: break;
+"459
+[e $U 476  ]
+[; ;main.c: 462: case '1':
 "462
-[e = . _horaAtual 0 -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 463: horaAtual.m = (BUFFCOM[3]-48);
+[e :U 479 ]
+[; ;main.c: 463: BUFFRESP[2] = horaAtual.h;
 "463
-[e = . _horaAtual 1 -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 464: horaAtual.s = (BUFFCOM[4]-48);
+[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 0 ]
+[; ;main.c: 464: BUFFRESP[3] = horaAtual.m;
 "464
-[e = . _horaAtual 2 -> - -> *U + &U _BUFFCOM * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 465: break;
+[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 1 ]
+[; ;main.c: 465: BUFFRESP[4] = horaAtual.s;
 "465
-[e $U 483  ]
-[; ;main.c: 468: case '2':
-"468
-[e :U 487 ]
-[; ;main.c: 469: dia = BUFFCOM[2]-48;
+[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux . _horaAtual 2 ]
+[; ;main.c: 466: break;
+"466
+[e $U 476  ]
+[; ;main.c: 469: case '2':
 "469
-[e = _dia -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 470: mes = BUFFCOM[3]-48;
+[e :U 480 ]
+[; ;main.c: 470: BUFFRESP[2] = dia;
 "470
-[e = _mes -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 471: ano = BUFFCOM[4]-48;
+[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _dia ]
+[; ;main.c: 471: BUFFRESP[3] = mes;
 "471
-[e = _ano - -> *U + &U _BUFFCOM * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i ]
-[; ;main.c: 472: break;
+[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _mes ]
+[; ;main.c: 472: BUFFRESP[4] = ano;
 "472
-[e $U 483  ]
-[; ;main.c: 475: case '3':
-"475
-[e :U 488 ]
-[; ;main.c: 476: desp_hora = BUFFCOM[2]-48;
+[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux -> _ano `uc ]
+[; ;main.c: 473: break;
+"473
+[e $U 476  ]
+[; ;main.c: 476: case '3':
 "476
-[e = _desp_hora -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 477: desp_min = BUFFCOM[3]-48;
+[e :U 481 ]
+[; ;main.c: 477: BUFFRESP[2] = desp_hora;
 "477
-[e = _desp_min -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
-[; ;main.c: 479: default:
+[e = *U + &U _BUFFRESP * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _desp_hora ]
+[; ;main.c: 478: BUFFRESP[3] = desp_min;
+"478
+[e = *U + &U _BUFFRESP * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux _desp_min ]
+[; ;main.c: 479: BUFFRESP[4] = 0xFF;
 "479
-[e :U 489 ]
+[e = *U + &U _BUFFRESP * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFRESP `ui `ux -> -> 255 `i `uc ]
 [; ;main.c: 480: break;
 "480
-[e $U 483  ]
-"481
-}
-[; ;main.c: 481: }
-[e $U 483  ]
-"453
-[e :U 484 ]
-[e [\ *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 48 `ui `uc 485
- , $ -> -> 49 `ui `uc 486
- , $ -> -> 50 `ui `uc 487
- , $ -> -> 51 `ui `uc 488
- 489 ]
-"481
-[e :U 483 ]
-[; ;main.c: 482: break;
+[e $U 476  ]
+[; ;main.c: 482: default:
 "482
-[e $U 469  ]
+[e :U 482 ]
+[; ;main.c: 483: break;
 "483
-}
-[; ;main.c: 483: }
-[e $U 469  ]
-"407
-[e :U 470 ]
-[e [\ *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 49 `ui `uc 471
- , $ -> -> 50 `ui `uc 479
- 469 ]
-"483
-[e :U 469 ]
-[; ;main.c: 484: calculaCRCBUFFRESP();
+[e $U 476  ]
 "484
-[e ( _calculaCRCBUFFRESP ..  ]
-[; ;main.c: 485: }
-"485
-[e :UE 468 ]
 }
+[; ;main.c: 484: }
+[e $U 476  ]
+"450
+[e :U 477 ]
+[e [\ *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 48 `ui `uc 478
+ , $ -> -> 49 `ui `uc 479
+ , $ -> -> 50 `ui `uc 480
+ , $ -> -> 51 `ui `uc 481
+ 482 ]
+"484
+[e :U 476 ]
+[; ;main.c: 485: break;
+"485
+[e $U 473  ]
+[; ;main.c: 487: case '2':
+"487
+[e :U 483 ]
+[; ;main.c: 488: for(iterator = 0; iterator < 5; iterator++){
+"488
+{
+[e = _iterator -> 0 `i ]
+[e $ < _iterator -> 5 `i 484  ]
+[e $U 485  ]
+[e :U 484 ]
+{
+[; ;main.c: 489: memcpy(&BUFFRESP[iterator], &BUFFCOM[iterator], sizeof(BUFFCOM[iterator]));
 "489
+[e ( _memcpy (3 , , -> &U *U + &U _BUFFRESP * -> -> _iterator `ui `ux -> -> # *U &U _BUFFRESP `ui `ux `*v -> &U *U + &U _BUFFCOM * -> -> _iterator `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `*Cv -> # *U + &U _BUFFCOM * -> -> _iterator `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `ui ]
+"490
+}
+"488
+[e ++ _iterator -> 1 `i ]
+[e $ < _iterator -> 5 `i 484  ]
+[e :U 485 ]
+"490
+}
+[; ;main.c: 490: }
+[; ;main.c: 492: switch(BUFFCOM[1]){
+"492
+[e $U 488  ]
+{
+[; ;main.c: 494: case '0':
+"494
+[e :U 489 ]
+[; ;main.c: 495: versao = BUFFCOM[2]-48;
+"495
+[e = _versao -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 496: revisao = BUFFCOM[3]-48;
+"496
+[e = _revisao -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 497: break;
+"497
+[e $U 487  ]
+[; ;main.c: 500: case '1':
+"500
+[e :U 490 ]
+[; ;main.c: 501: horaAtual.h = (BUFFCOM[2]-48);
+"501
+[e = . _horaAtual 0 -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 502: horaAtual.m = (BUFFCOM[3]-48);
+"502
+[e = . _horaAtual 1 -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 503: horaAtual.s = (BUFFCOM[4]-48);
+"503
+[e = . _horaAtual 2 -> - -> *U + &U _BUFFCOM * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 504: break;
+"504
+[e $U 487  ]
+[; ;main.c: 507: case '2':
+"507
+[e :U 491 ]
+[; ;main.c: 508: dia = BUFFCOM[2]-48;
+"508
+[e = _dia -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 509: mes = BUFFCOM[3]-48;
+"509
+[e = _mes -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 510: ano = BUFFCOM[4]-48;
+"510
+[e = _ano - -> *U + &U _BUFFCOM * -> -> -> 4 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i ]
+[; ;main.c: 511: break;
+"511
+[e $U 487  ]
+[; ;main.c: 514: case '3':
+"514
+[e :U 492 ]
+[; ;main.c: 515: desp_hora = BUFFCOM[2]-48;
+"515
+[e = _desp_hora -> - -> *U + &U _BUFFCOM * -> -> -> 2 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 516: desp_min = BUFFCOM[3]-48;
+"516
+[e = _desp_min -> - -> *U + &U _BUFFCOM * -> -> -> 3 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> 48 `i `uc ]
+[; ;main.c: 518: default:
+"518
+[e :U 493 ]
+[; ;main.c: 519: break;
+"519
+[e $U 487  ]
+"520
+}
+[; ;main.c: 520: }
+[e $U 487  ]
+"492
+[e :U 488 ]
+[e [\ *U + &U _BUFFCOM * -> -> -> 1 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 48 `ui `uc 489
+ , $ -> -> 49 `ui `uc 490
+ , $ -> -> 50 `ui `uc 491
+ , $ -> -> 51 `ui `uc 492
+ 493 ]
+"520
+[e :U 487 ]
+[; ;main.c: 521: break;
+"521
+[e $U 473  ]
+"522
+}
+[; ;main.c: 522: }
+[e $U 473  ]
+"446
+[e :U 474 ]
+[e [\ *U + &U _BUFFCOM * -> -> -> 0 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux , $ -> -> 49 `ui `uc 475
+ , $ -> -> 50 `ui `uc 483
+ 473 ]
+"522
+[e :U 473 ]
+[; ;main.c: 523: calculaCRCBUFFRESP();
+"523
+[e ( _calculaCRCBUFFRESP ..  ]
+[; ;main.c: 524: }
+"524
+[e :UE 472 ]
+}
+"528
 [v _verificaCRCBUFFCOM `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 489: void verificaCRCBUFFCOM(){
+[; ;main.c: 528: void verificaCRCBUFFCOM(){
 [e :U _verificaCRCBUFFCOM ]
 [f ]
-"490
+"529
 [v _CRC_OK `uc ~T0 @X0 1 a ]
-"491
+"530
 [v _crc `ui ~T0 @X0 1 a ]
-[; ;main.c: 490: char CRC_OK;
-[; ;main.c: 491: unsigned int crc = crc16(BUFFCOM, 5);
+[; ;main.c: 529: char CRC_OK;
+[; ;main.c: 530: unsigned int crc = crc16(BUFFCOM, 5);
 [e = _crc -> ( _crc16 (2 , &U _BUFFCOM -> -> 5 `i `us `ui ]
-"492
+"531
 [v _crc1 `uc ~T0 @X0 1 a ]
-[; ;main.c: 492: unsigned char crc1 = crc >> 8;
+[; ;main.c: 531: unsigned char crc1 = crc >> 8;
 [e = _crc1 -> >> _crc -> 8 `i `uc ]
-"493
+"532
 [v _crc2 `uc ~T0 @X0 1 a ]
-[; ;main.c: 493: unsigned char crc2 = crc & 0xFF;
+[; ;main.c: 532: unsigned char crc2 = crc & 0xFF;
 [e = _crc2 -> & _crc -> -> 255 `i `ui `uc ]
-[; ;main.c: 495: if(crc1 == BUFFCOM[5] && BUFFCOM[6] == crc2) CRC_OK = 1;
-"495
-[e $ ! && == -> _crc1 `i -> *U + &U _BUFFCOM * -> -> -> 5 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i == -> *U + &U _BUFFCOM * -> -> -> 6 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> _crc2 `i 491  ]
+[; ;main.c: 534: if(crc1 == BUFFCOM[5] && BUFFCOM[6] == crc2) CRC_OK = 1;
+"534
+[e $ ! && == -> _crc1 `i -> *U + &U _BUFFCOM * -> -> -> 5 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i == -> *U + &U _BUFFCOM * -> -> -> 6 `i `ui `ux -> -> # *U &U _BUFFCOM `ui `ux `i -> _crc2 `i 495  ]
 [e = _CRC_OK -> -> 1 `i `uc ]
-[e $U 492  ]
-"496
-[e :U 491 ]
-[; ;main.c: 496: else CRC_OK = 0;
+[e $U 496  ]
+"535
+[e :U 495 ]
+[; ;main.c: 535: else CRC_OK = 0;
 [e = _CRC_OK -> -> 0 `i `uc ]
-[e :U 492 ]
-[; ;main.c: 498: if(CRC_OK == 1) estado = 4;
-"498
-[e $ ! == -> _CRC_OK `i -> 1 `i 493  ]
+[e :U 496 ]
+[; ;main.c: 537: if(CRC_OK == 1) estado = 4;
+"537
+[e $ ! == -> _CRC_OK `i -> 1 `i 497  ]
 [e = _estado -> -> 4 `i `uc ]
-[e $U 494  ]
-"499
-[e :U 493 ]
-[; ;main.c: 499: else estado = 5;
+[e $U 498  ]
+"538
+[e :U 497 ]
+[; ;main.c: 538: else estado = 5;
 [e = _estado -> -> 5 `i `uc ]
-[e :U 494 ]
-[; ;main.c: 500: }
-"500
-[e :UE 490 ]
+[e :U 498 ]
+[; ;main.c: 539: }
+"539
+[e :UE 494 ]
 }
-"502
+"541
 [v _maquinaEstado `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 502: void maquinaEstado(){
+[; ;main.c: 541: void maquinaEstado(){
 [e :U _maquinaEstado ]
 [f ]
-[; ;main.c: 503: switch(estado){
-"503
-[e $U 497  ]
+[; ;main.c: 542: switch(estado){
+"542
+[e $U 501  ]
 {
-[; ;main.c: 504: case 1:
-"504
-[e :U 498 ]
-[; ;main.c: 505: verificaCRCBUFFCOM();
-"505
-[e ( _verificaCRCBUFFCOM ..  ]
-[; ;main.c: 506: break;
-"506
-[e $U 496  ]
-[; ;main.c: 508: case 2:
-"508
-[e :U 499 ]
-[; ;main.c: 509: trataComando();
-"509
-[e ( _trataComando ..  ]
-[; ;main.c: 510: break;
-"510
-[e $U 496  ]
-[; ;main.c: 512: case 3:
-"512
-[e :U 500 ]
-[; ;main.c: 513: tx_data();
-"513
-[e ( _tx_data ..  ]
-[; ;main.c: 514: break;
-"514
-[e $U 496  ]
-[; ;main.c: 516: case 4:
-"516
-[e :U 501 ]
-[; ;main.c: 517: enviaByte(0x05);
-"517
-[e ( _enviaByte (1 -> -> 5 `i `uc ]
-[; ;main.c: 518: break;
-"518
-[e $U 496  ]
-[; ;main.c: 520: case 5:
-"520
+[; ;main.c: 543: case 1:
+"543
 [e :U 502 ]
-[; ;main.c: 521: enviaByte(0x15);
-"521
-[e ( _enviaByte (1 -> -> 21 `i `uc ]
-[; ;main.c: 522: break;
-"522
-[e $U 496  ]
-[; ;main.c: 524: case 0:
-"524
+[; ;main.c: 544: verificaCRCBUFFCOM();
+"544
+[e ( _verificaCRCBUFFCOM ..  ]
+[; ;main.c: 545: break;
+"545
+[e $U 500  ]
+[; ;main.c: 547: case 2:
+"547
 [e :U 503 ]
-[; ;main.c: 525: break;
-"525
-[e $U 496  ]
-[; ;main.c: 526: default:
-"526
+[; ;main.c: 548: trataComando();
+"548
+[e ( _trataComando ..  ]
+[; ;main.c: 549: break;
+"549
+[e $U 500  ]
+[; ;main.c: 551: case 3:
+"551
 [e :U 504 ]
-[; ;main.c: 527: break;
-"527
-[e $U 496  ]
-"528
+[; ;main.c: 552: tx_data();
+"552
+[e ( _tx_data ..  ]
+[; ;main.c: 553: break;
+"553
+[e $U 500  ]
+[; ;main.c: 555: case 4:
+"555
+[e :U 505 ]
+[; ;main.c: 556: enviaByte(0x05);
+"556
+[e ( _enviaByte (1 -> -> 5 `i `uc ]
+[; ;main.c: 557: break;
+"557
+[e $U 500  ]
+[; ;main.c: 559: case 5:
+"559
+[e :U 506 ]
+[; ;main.c: 560: enviaByte(0x15);
+"560
+[e ( _enviaByte (1 -> -> 21 `i `uc ]
+[; ;main.c: 561: break;
+"561
+[e $U 500  ]
+[; ;main.c: 563: case 0:
+"563
+[e :U 507 ]
+[; ;main.c: 564: break;
+"564
+[e $U 500  ]
+[; ;main.c: 565: default:
+"565
+[e :U 508 ]
+[; ;main.c: 566: break;
+"566
+[e $U 500  ]
+"567
 }
-[; ;main.c: 528: }
-[e $U 496  ]
-"503
-[e :U 497 ]
-[e [\ _estado , $ -> -> 1 `i `uc 498
- , $ -> -> 2 `i `uc 499
- , $ -> -> 3 `i `uc 500
- , $ -> -> 4 `i `uc 501
- , $ -> -> 5 `i `uc 502
- , $ -> -> 0 `i `uc 503
- 504 ]
-"528
-[e :U 496 ]
-[; ;main.c: 529: }
-"529
-[e :UE 495 ]
+[; ;main.c: 567: }
+[e $U 500  ]
+"542
+[e :U 501 ]
+[e [\ _estado , $ -> -> 1 `i `uc 502
+ , $ -> -> 2 `i `uc 503
+ , $ -> -> 3 `i `uc 504
+ , $ -> -> 4 `i `uc 505
+ , $ -> -> 5 `i `uc 506
+ , $ -> -> 0 `i `uc 507
+ 508 ]
+"567
+[e :U 500 ]
+[; ;main.c: 568: }
+"568
+[e :UE 499 ]
 }
-"531
+"570
 [v _enviaByte `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;main.c: 531: void enviaByte(char BYTE){
+[; ;main.c: 570: void enviaByte(char BYTE){
 [e :U _enviaByte ]
 [v _BYTE `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;main.c: 532: while(!TXIF);
-"532
-[e $U 506  ]
-[e :U 507 ]
-[e :U 506 ]
-[e $ ! _TXIF 507  ]
-[e :U 508 ]
-[; ;main.c: 533: TXREG = BYTE;
-"533
-[e = _TXREG _BYTE ]
-[; ;main.c: 535: if(BYTE==0x05)
-"535
-[e $ ! == -> _BYTE `i -> 5 `i 509  ]
-[; ;main.c: 536: estado = 2;
-"536
-[e = _estado -> -> 2 `i `uc ]
+[; ;main.c: 571: while(!TXIF);
+"571
 [e $U 510  ]
-"537
-[e :U 509 ]
-[; ;main.c: 537: else
-[; ;main.c: 538: estado = 0;
-"538
-[e = _estado -> -> 0 `i `uc ]
+[e :U 511 ]
 [e :U 510 ]
-[; ;main.c: 539: }
-"539
-[e :UE 505 ]
+[e $ ! _TXIF 511  ]
+[e :U 512 ]
+[; ;main.c: 572: TXREG = BYTE;
+"572
+[e = _TXREG _BYTE ]
+[; ;main.c: 574: if(BYTE==0x05)
+"574
+[e $ ! == -> _BYTE `i -> 5 `i 513  ]
+[; ;main.c: 575: estado = 2;
+"575
+[e = _estado -> -> 2 `i `uc ]
+[e $U 514  ]
+"576
+[e :U 513 ]
+[; ;main.c: 576: else
+[; ;main.c: 577: estado = 0;
+"577
+[e = _estado -> -> 0 `i `uc ]
+[e :U 514 ]
+[; ;main.c: 578: }
+"578
+[e :UE 509 ]
 }
-"543
+"582
 [v _tx_data `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 543: void tx_data(){
+[; ;main.c: 582: void tx_data(){
 [e :U _tx_data ]
 [f ]
-"544
+"583
 [v _cont `i ~T0 @X0 1 a ]
-[; ;main.c: 544: int cont;
-[; ;main.c: 545: for(cont=0;cont<7;cont++){
-"545
+[; ;main.c: 583: int cont;
+[; ;main.c: 584: for(cont=0;cont<7;cont++){
+"584
 {
 [e = _cont -> 0 `i ]
-[e $ < _cont -> 7 `i 512  ]
-[e $U 513  ]
-[e :U 512 ]
-{
-[; ;main.c: 546: while(!TXIF);
-"546
-[e $U 515  ]
+[e $ < _cont -> 7 `i 516  ]
+[e $U 517  ]
 [e :U 516 ]
-[e :U 515 ]
-[e $ ! _TXIF 516  ]
-[e :U 517 ]
-[; ;main.c: 547: TXREG = BUFFRESP[cont];
-"547
+{
+[; ;main.c: 585: while(!TXIF);
+"585
+[e $U 519  ]
+[e :U 520 ]
+[e :U 519 ]
+[e $ ! _TXIF 520  ]
+[e :U 521 ]
+[; ;main.c: 586: TXREG = BUFFRESP[cont];
+"586
 [e = _TXREG *U + &U _BUFFRESP * -> -> _cont `ui `ux -> -> # *U &U _BUFFRESP `ui `ux ]
-"548
+"587
 }
-"545
+"584
 [e ++ _cont -> 1 `i ]
-[e $ < _cont -> 7 `i 512  ]
-[e :U 513 ]
-"548
+[e $ < _cont -> 7 `i 516  ]
+[e :U 517 ]
+"587
 }
-[; ;main.c: 548: }
-[; ;main.c: 549: estado = 0;
-"549
+[; ;main.c: 587: }
+[; ;main.c: 588: estado = 0;
+"588
 [e = _estado -> -> 0 `i `uc ]
-[; ;main.c: 550: }
-"550
-[e :UE 511 ]
+[; ;main.c: 589: }
+"589
+[e :UE 515 ]
 }
 [p f _sprintf 8913024 ]
-[a 9C 68 101 102 97 108 116 111 115 115 0 ]
-[a 6C 102 42 32 111 110 47 111 102 102 95 115 101 109 47 104 111 114 95 114 101 108 0 ]
-[a 10C 116 101 108 97 32 37 105 0 ]
-[a 2C 72 111 114 97 114 105 111 32 58 32 37 100 58 37 100 58 37 100 0 ]
-[a 1C 91 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 93 0 ]
-[a 4C 102 42 32 32 32 32 32 32 32 32 37 100 32 87 0 ]
-[a 8C 102 42 32 104 111 114 97 95 108 105 103 97 47 104 111 114 97 95 100 101 115 108 46 0 ]
-[a 3C 67 79 78 83 85 77 79 32 58 32 0 ]
-[a 5C 67 79 78 70 73 71 85 82 65 67 65 79 32 58 32 0 ]
-[a 7C 65 76 65 82 77 69 32 58 32 0 ]
+[a 19C 68 101 102 97 108 116 111 115 115 0 ]
+[a 20C 116 101 108 97 32 37 105 0 ]
+[a 4C 72 111 114 97 114 105 111 32 58 32 37 100 58 37 100 58 37 100 0 ]
+[a 14C 72 111 114 97 114 105 111 32 58 32 37 100 58 37 100 0 ]
+[a 16C 72 111 114 97 114 105 111 32 58 32 37 100 58 37 100 0 ]
+[a 18C 72 111 114 97 114 105 111 32 58 32 37 100 58 37 100 0 ]
+[a 3C 91 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 93 0 ]
+[a 12C 91 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 32 37 99 93 0 ]
+[a 6C 32 32 32 32 32 32 32 32 37 100 32 87 0 ]
+[a 8C 32 32 32 32 32 32 32 32 37 100 32 87 0 ]
+[a 10C 32 32 32 32 32 32 32 32 37 100 32 87 0 ]
+[a 15C 72 79 82 65 82 73 79 32 76 73 71 65 82 0 ]
+[a 13C 67 79 78 70 73 71 46 32 82 69 76 79 71 73 79 0 ]
+[a 17C 72 79 82 65 82 73 79 32 68 69 83 76 0 ]
+[a 11C 67 79 78 70 73 71 46 32 83 69 77 46 0 ]
+[a 5C 67 79 78 83 85 77 79 32 73 78 83 84 65 78 84 65 78 69 79 58 32 0 ]
+[a 9C 67 79 78 83 85 77 79 32 65 78 85 65 76 58 32 0 ]
+[a 7C 67 79 78 83 85 77 79 32 77 69 78 83 65 76 58 32 0 ]
+[a 1C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 2C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

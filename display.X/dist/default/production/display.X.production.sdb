@@ -51,43 +51,43 @@
 [v _WriteCmdXLCD WriteCmdXLCD `(v  1 e 1 0 ]
 "16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\writdata.c
 [v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
-"123 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+"127 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _init_XLCD init_XLCD `(v  1 e 1 0 ]
-"135
+"139
 [v _escreveMensagem escreveMensagem `(v  1 e 1 0 ]
-"142
-[v _limpaTela limpaTela `(v  1 e 1 0 ]
 "147
+[v _limpaTela limpaTela `(v  1 e 1 0 ]
+"155
 [v _telas telas `(v  1 e 1 0 ]
-"190
+"229
 [v _troca_telas troca_telas `(v  1 e 1 0 ]
-"206
+"245
 [v _trata_data trata_data `(v  1 e 1 0 ]
-"230
+"269
 [v _trata_hora trata_hora `(v  1 e 1 0 ]
-"243
+"282
 [v _despertar despertar `(v  1 e 1 0 ]
-"256
+"295
 [v _pic_isr pic_isr `IIL(v  1 e 1 0 ]
-"297
+"336
 [v _main main `(v  1 e 1 0 ]
-"359
+"398
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
-"363
+"402
 [v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
-"374
+"413
 [v _crc16 crc16 `(us  1 e 2 0 ]
-"395
+"434
 [v _calculaCRCBUFFRESP calculaCRCBUFFRESP `(v  1 e 1 0 ]
-"404
+"443
 [v _trataComando trataComando `(v  1 e 1 0 ]
-"489
+"528
 [v _verificaCRCBUFFCOM verificaCRCBUFFCOM `(v  1 e 1 0 ]
-"502
+"541
 [v _maquinaEstado maquinaEstado `(v  1 e 1 0 ]
-"531
+"570
 [v _enviaByte enviaByte `(v  1 e 1 0 ]
-"543
+"582
 [v _tx_data tx_data `(v  1 e 1 0 ]
 [s S113 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -147,7 +147,7 @@
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 "3383
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S533 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S543 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -157,31 +157,31 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "3543
-[s S542 . 1 `uc 1 LB0 1 0 :1:0 
+[s S552 . 1 `uc 1 LB0 1 0 :1:0 
 ]
-[s S544 . 1 `uc 1 . 1 0 :1:0 
+[s S554 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 ]
-[s S547 . 1 `uc 1 . 1 0 :2:0 
+[s S557 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LB2 1 0 :1:2 
 ]
-[s S550 . 1 `uc 1 . 1 0 :3:0 
+[s S560 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 LB3 1 0 :1:3 
 ]
-[s S553 . 1 `uc 1 . 1 0 :4:0 
+[s S563 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LB4 1 0 :1:4 
 ]
-[s S556 . 1 `uc 1 . 1 0 :5:0 
+[s S566 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LB5 1 0 :1:5 
 ]
-[s S559 . 1 `uc 1 . 1 0 :6:0 
+[s S569 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 LB6 1 0 :1:6 
 ]
-[s S562 . 1 `uc 1 . 1 0 :7:0 
+[s S572 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S565 . 1 `S533 1 . 1 0 `S542 1 . 1 0 `S544 1 . 1 0 `S547 1 . 1 0 `S550 1 . 1 0 `S553 1 . 1 0 `S556 1 . 1 0 `S559 1 . 1 0 `S562 1 . 1 0 ]
-[v _LATBbits LATBbits `VES565  1 e 1 @3978 ]
+[u S575 . 1 `S543 1 . 1 0 `S552 1 . 1 0 `S554 1 . 1 0 `S557 1 . 1 0 `S560 1 . 1 0 `S563 1 . 1 0 `S566 1 . 1 0 `S569 1 . 1 0 `S572 1 . 1 0 ]
+[v _LATBbits LATBbits `VES575  1 e 1 @3978 ]
 [s S291 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -201,7 +201,7 @@
 [v _TRISCbits TRISCbits `VES305  1 e 1 @3988 ]
 "4173
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
-[s S622 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S632 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -211,7 +211,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "4205
-[s S631 . 1 `uc 1 RB0 1 0 :1:0 
+[s S641 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -220,8 +220,8 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S640 . 1 `S622 1 . 1 0 `S631 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES640  1 e 1 @3987 ]
+[u S650 . 1 `S632 1 . 1 0 `S641 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES650  1 e 1 @3987 ]
 [s S225 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -314,71 +314,71 @@
 "35
 [s S28 . 120 `[30]S25 1 consumoDia 120 0 ]
 [v _energia energia `S28  1 e 120 0 ]
-"72
+"76
 [v _BUFFCOM BUFFCOM `[7]uc  1 e 7 0 ]
 [v _BUFFRESP BUFFRESP `[7]uc  1 e 7 0 ]
-"73
-[v _estado estado `uc  1 e 1 0 ]
-"74
-[v _versao versao `uc  1 e 1 0 ]
-"75
-[v _revisao revisao `uc  1 e 1 0 ]
 "77
-[v _contador_interrupcao contador_interrupcao `uc  1 e 1 0 ]
+[v _estado estado `uc  1 e 1 0 ]
 "78
-[v _contador_um_segundo contador_um_segundo `uc  1 e 1 0 ]
+[v _versao versao `uc  1 e 1 0 ]
 "79
-[v _mensagemL1 mensagemL1 `[16]uc  1 e 16 0 ]
-"80
-[v _mensagemL2 mensagemL2 `[16]uc  1 e 16 0 ]
+[v _revisao revisao `uc  1 e 1 0 ]
 "81
+[v _contador_interrupcao contador_interrupcao `uc  1 e 1 0 ]
+"82
+[v _contador_um_segundo contador_um_segundo `uc  1 e 1 0 ]
+"83
+[v _mensagemL1 mensagemL1 `[16]uc  1 e 16 0 ]
+"84
+[v _mensagemL2 mensagemL2 `[16]uc  1 e 16 0 ]
+"85
 [v _dia dia `uc  1 e 1 0 ]
 [v _mes mes `uc  1 e 1 0 ]
-"82
+"86
 [v _ano ano `i  1 e 2 0 ]
-"83
+"87
 [v _desp_hora desp_hora `uc  1 e 1 0 ]
 [v _desp_min desp_min `uc  1 e 1 0 ]
-"84
-[v _contador_alarme contador_alarme `uc  1 e 1 0 ]
-"85
-[v _despertou despertou `uc  1 e 1 0 ]
-"86
-[v _i i `i  1 e 2 0 ]
 "88
+[v _contador_alarme contador_alarme `uc  1 e 1 0 ]
+"89
+[v _despertou despertou `uc  1 e 1 0 ]
+"90
+[v _i i `i  1 e 2 0 ]
+"92
 [v _tela tela `i  1 e 2 0 ]
-"95
-[v _ADResult ADResult `ui  1 e 2 0 ]
-"96
-[v _temperatura temperatura `f  1 e 4 0 ]
 "99
+[v _ADResult ADResult `ui  1 e 2 0 ]
+"100
+[v _temperatura temperatura `f  1 e 4 0 ]
+"103
 [v _constante_ad constante_ad `f  1 e 4 0 ]
-"297
+"336
 [v _main main `(v  1 e 1 0 ]
 {
-"339
+"378
 [v main@b b `i  1 a 2 18 ]
-"357
+"396
 } 0
-"190
+"229
 [v _troca_telas troca_telas `(v  1 e 1 0 ]
-{
-"202
-} 0
-"230
-[v _trata_hora trata_hora `(v  1 e 1 0 ]
 {
 "241
 } 0
-"206
+"269
+[v _trata_hora trata_hora `(v  1 e 1 0 ]
+{
+"280
+} 0
+"245
 [v _trata_data trata_data `(v  1 e 1 0 ]
 {
-"228
+"267
 } 0
-"147
+"155
 [v _telas telas `(v  1 e 1 0 ]
 {
-"187
+"226
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -420,15 +420,114 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 19 ]
 "31
 } 0
-"142 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+"147 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _limpaTela limpaTela `(v  1 e 1 0 ]
 {
-"144
+"152
 } 0
-"123
+"139
+[v _escreveMensagem escreveMensagem `(v  1 e 1 0 ]
+{
+[v escreveMensagem@l1 l1 `*.39uc  1 p 2 22 ]
+[v escreveMensagem@l2 l2 `*.39uc  1 p 2 24 ]
+"145
+} 0
+"16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\putrxlcd.c
+[v _putrsXLCD putrsXLCD `(v  1 e 1 0 ]
+{
+[v putrsXLCD@buffer buffer `*.34Cuc  1 p 2 19 ]
+"25
+} 0
+"16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\writdata.c
+[v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
+{
+[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
+[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
+"35
+[v WriteDataXLCD@data data `uc  1 a 1 18 ]
+"63
+} 0
+"541 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+[v _maquinaEstado maquinaEstado `(v  1 e 1 0 ]
+{
+"568
+} 0
+"528
+[v _verificaCRCBUFFCOM verificaCRCBUFFCOM `(v  1 e 1 0 ]
+{
+"530
+[v verificaCRCBUFFCOM@crc crc `ui  1 a 2 33 ]
+"529
+[v verificaCRCBUFFCOM@CRC_OK CRC_OK `uc  1 a 1 32 ]
+"532
+[v verificaCRCBUFFCOM@crc2 crc2 `uc  1 a 1 31 ]
+"531
+[v verificaCRCBUFFCOM@crc1 crc1 `uc  1 a 1 30 ]
+"539
+} 0
+"582
+[v _tx_data tx_data `(v  1 e 1 0 ]
+{
+"583
+[v tx_data@cont cont `i  1 a 2 17 ]
+"589
+} 0
+"443
+[v _trataComando trataComando `(v  1 e 1 0 ]
+{
+"444
+[v trataComando@iterator iterator `i  1 a 2 39 ]
+"524
+} 0
+"434
+[v _calculaCRCBUFFRESP calculaCRCBUFFRESP `(v  1 e 1 0 ]
+{
+"435
+[v calculaCRCBUFFRESP@crc crc `ui  1 a 2 35 ]
+"437
+[v calculaCRCBUFFRESP@crc2 crc2 `uc  1 a 1 34 ]
+"436
+[v calculaCRCBUFFRESP@crc1 crc1 `uc  1 a 1 33 ]
+"441
+} 0
+"11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"20
+[v memcpy@s s `*.36Cuc  1 a 3 24 ]
+"18
+[v memcpy@d d `*.39uc  1 a 2 27 ]
+"11
+[v memcpy@d1 d1 `*.39v  1 p 2 17 ]
+[v memcpy@s1 s1 `*.36Cv  1 p 3 19 ]
+[v memcpy@n n `ui  1 p 2 22 ]
+"32
+} 0
+"413 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+[v _crc16 crc16 `(us  1 e 2 0 ]
+{
+"416
+[v crc16@crc crc `ui  1 a 2 28 ]
+"415
+[v crc16@data data `ui  1 a 2 26 ]
+"413
+[v crc16@i i `uc  1 a 1 25 ]
+[v crc16@data_p data_p `*.39uc  1 p 2 17 ]
+[v crc16@length length `us  1 p 2 19 ]
+"431
+} 0
+"570
+[v _enviaByte enviaByte `(v  1 e 1 0 ]
+{
+[v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
+[v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
+[v enviaByte@BYTE BYTE `uc  1 a 1 17 ]
+"578
+} 0
+"127
 [v _init_XLCD init_XLCD `(v  1 e 1 0 ]
 {
-"128
+"132
 } 0
 "19 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\openxlcd.c
 [v _OpenXLCD OpenXLCD `(v  1 e 1 0 ]
@@ -448,10 +547,19 @@
 [v WriteCmdXLCD@cmd cmd `uc  1 a 1 18 ]
 "60
 } 0
-"363 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\setddram.c
+[v _SetDDRamAddr SetDDRamAddr `(v  1 e 1 0 ]
+{
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
+"32
+[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 21 ]
+"60
+} 0
+"402 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _DelayPORXLCD DelayPORXLCD `(v  1 e 1 0 ]
 {
-"366
+"405
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d1ktcyx.c
 [v _Delay1KTCYx Delay1KTCYx `(v  1 e 1 0 ]
@@ -469,46 +577,15 @@
 [v Delay10KTCYx@unit unit `uc  1 a 1 18 ]
 "13
 } 0
-"135 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
-[v _escreveMensagem escreveMensagem `(v  1 e 1 0 ]
-{
-[v escreveMensagem@l1 l1 `*.39uc  1 p 2 22 ]
-[v escreveMensagem@l2 l2 `*.39uc  1 p 2 24 ]
-"140
-} 0
-"16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\putrxlcd.c
-[v _putrsXLCD putrsXLCD `(v  1 e 1 0 ]
-{
-[v putrsXLCD@buffer buffer `*.39Cuc  1 p 2 19 ]
-"25
-} 0
-"16 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\writdata.c
-[v _WriteDataXLCD WriteDataXLCD `(v  1 e 1 0 ]
-{
-[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
-[v WriteDataXLCD@data data `uc  1 a 1 wreg ]
-"35
-[v WriteDataXLCD@data data `uc  1 a 1 18 ]
-"63
-} 0
 "11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\busyxlcd.c
 [v _BusyXLCD BusyXLCD `(uc  1 e 1 0 ]
 {
 "57
 } 0
-"13 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\plib\XLCD\setddram.c
-[v _SetDDRamAddr SetDDRamAddr `(v  1 e 1 0 ]
-{
-[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
-[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 wreg ]
-"32
-[v SetDDRamAddr@DDaddr DDaddr `uc  1 a 1 21 ]
-"60
-} 0
-"359 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
+"398 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _DelayFor18TCY DelayFor18TCY `(v  1 e 1 0 ]
 {
-"361
+"400
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\pic18\d10tcyx.c
 [v _Delay10TCYx Delay10TCYx `(v  1 e 1 0 ]
@@ -518,90 +595,13 @@
 [v Delay10TCYx@unit unit `uc  1 a 1 17 ]
 "13
 } 0
-"502 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
-[v _maquinaEstado maquinaEstado `(v  1 e 1 0 ]
-{
-"529
-} 0
-"489
-[v _verificaCRCBUFFCOM verificaCRCBUFFCOM `(v  1 e 1 0 ]
-{
-"491
-[v verificaCRCBUFFCOM@crc crc `ui  1 a 2 33 ]
-"490
-[v verificaCRCBUFFCOM@CRC_OK CRC_OK `uc  1 a 1 32 ]
-"493
-[v verificaCRCBUFFCOM@crc2 crc2 `uc  1 a 1 31 ]
-"492
-[v verificaCRCBUFFCOM@crc1 crc1 `uc  1 a 1 30 ]
-"500
-} 0
-"543
-[v _tx_data tx_data `(v  1 e 1 0 ]
-{
-"544
-[v tx_data@cont cont `i  1 a 2 17 ]
-"550
-} 0
-"404
-[v _trataComando trataComando `(v  1 e 1 0 ]
-{
-"405
-[v trataComando@iterator iterator `i  1 a 2 39 ]
-"485
-} 0
-"395
-[v _calculaCRCBUFFRESP calculaCRCBUFFRESP `(v  1 e 1 0 ]
-{
-"396
-[v calculaCRCBUFFRESP@crc crc `ui  1 a 2 35 ]
-"398
-[v calculaCRCBUFFRESP@crc2 crc2 `uc  1 a 1 34 ]
-"397
-[v calculaCRCBUFFRESP@crc1 crc1 `uc  1 a 1 33 ]
-"402
-} 0
-"11 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\memcpy.c
-[v _memcpy memcpy `(*.39v  1 e 2 0 ]
-{
-"20
-[v memcpy@s s `*.36Cuc  1 a 3 24 ]
-"18
-[v memcpy@d d `*.39uc  1 a 2 27 ]
-"11
-[v memcpy@d1 d1 `*.39v  1 p 2 17 ]
-[v memcpy@s1 s1 `*.36Cv  1 p 3 19 ]
-[v memcpy@n n `ui  1 p 2 22 ]
-"32
-} 0
-"374 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
-[v _crc16 crc16 `(us  1 e 2 0 ]
-{
-"377
-[v crc16@crc crc `ui  1 a 2 28 ]
-"376
-[v crc16@data data `ui  1 a 2 26 ]
-"374
-[v crc16@i i `uc  1 a 1 25 ]
-[v crc16@data_p data_p `*.39uc  1 p 2 17 ]
-[v crc16@length length `us  1 p 2 19 ]
-"392
-} 0
-"531
-[v _enviaByte enviaByte `(v  1 e 1 0 ]
-{
-[v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
-[v enviaByte@BYTE BYTE `uc  1 a 1 wreg ]
-[v enviaByte@BYTE BYTE `uc  1 a 1 17 ]
-"539
-} 0
-"243
+"282 C:\Users\Heitor\Desktop\embarcados\embarcados\display.X\main.c
 [v _despertar despertar `(v  1 e 1 0 ]
 {
-"252
+"291
 } 0
-"256
+"295
 [v _pic_isr pic_isr `IIL(v  1 e 1 0 ]
 {
-"280
+"319
 } 0
